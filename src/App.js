@@ -6,7 +6,8 @@ import reducers from './reducers';
 import ReduxThunk from 'redux-thunk';
 import HomeScreen from './components/HomeScreen';
 import RouterComponent from './Router';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
+Icon.loadFont();
 console.disableYellowBox = true;
 export default class App extends Component {
   render() {
