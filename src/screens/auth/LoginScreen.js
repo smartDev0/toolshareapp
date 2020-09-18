@@ -76,11 +76,25 @@ class LoginScreen extends React.Component{
                             <Text style={styles.signup_text}>Log In</Text>
                         </TouchableOpacity>
                         <View style={styles.login_box}>
-                            <Text style={styles.text_link}>Forgot password?</Text>
+                            <TouchableOpacity
+                                activeOpacity={0.7}
+                                onPress={() => this.props.navigation.navigate('ForgotScreen')}>
+                                <Text style={styles.text_link}>Forgot password?</Text>
+                            </TouchableOpacity>
+
                             <View style={styles.divide}></View>
                             <Text style={styles.text_link}>
-                                Don't have and account?
-                                 <Text style={styles.active_text}> Sign Up</Text>
+                                <TouchableOpacity>
+                                    <Text style={styles.white_color}>
+                                        Don't have and account?
+                                    </Text>
+                                </TouchableOpacity>
+
+                                 <TouchableOpacity
+                                    activeOpacity={0.7}
+                                    onPress={() => this.props.navigation.navigate('RegisterScreen')}>
+                                    <Text style={styles.active_text}> Sign Up</Text>
+                                </TouchableOpacity>
                             </Text>
                         </View>
                         <View style={styles.bottom_group}>
@@ -145,7 +159,8 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     login_box: {
-        marginHorizontal:10
+        marginHorizontal: 10,
+        marginTop:10
     },
     signin_button: {
         marginTop: 10,
@@ -191,5 +206,8 @@ const styles = StyleSheet.create({
     },
     active_text: {
         color: '#6EA0BE',
+    },
+    white_color: {
+        color: "white"
     }
 })

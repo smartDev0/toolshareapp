@@ -37,7 +37,7 @@ const PinScreen = (props) => {
                         <TouchableOpacity
                             style={styles.signup_button}
                             activeOpacity={0.7}
-                            onPress={(e) => { props.navigation.navigate('LoginScreen')}}>
+                            onPress={(e) => { props.navigation.navigate('RegisterScreen')}}>
                             <Text style={styles.signup_text}>Sign Up</Text>
                         </TouchableOpacity>
                         <TouchableOpacity

@@ -10,6 +10,8 @@ import ToolSearchResultsScreen from './components/ToolSearchResultsScreen';
 import SplashScreen from './screens/SplashScreen';
 import PinScreen from './screens/auth/PinScreen';
 import LoginScreen from './screens/auth/LoginScreen';
+import ForgotScreen from './screens/auth/ForgotScreen';
+import RegisterScreen from './screens/auth/RegisterScreen';
 
 const Auth = createStackNavigator({
   //Stack Navigator for Login and Sign up Screen
@@ -25,12 +27,18 @@ const Auth = createStackNavigator({
       headerShown: false,
     },
   },
-  // ForgotScreen: {
-  //   screen: ForgotScreen,
-  //   navigationOptions: {
-  //     headerShown: false,
-  //   },
-  // },
+  RegisterScreen: {
+    screen: RegisterScreen,
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  ForgotScreen: {
+    screen: ForgotScreen,
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
 });
 
 // const RouterComponent = () => {
