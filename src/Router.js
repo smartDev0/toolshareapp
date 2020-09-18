@@ -9,6 +9,7 @@ import ProfileScreen from './components/ProfileScreen';
 import ToolSearchResultsScreen from './components/ToolSearchResultsScreen';
 import SplashScreen from './screens/SplashScreen';
 import PinScreen from './screens/auth/PinScreen';
+import LoginScreen from './screens/auth/LoginScreen';
 
 const Auth = createStackNavigator({
   //Stack Navigator for Login and Sign up Screen
@@ -18,12 +19,12 @@ const Auth = createStackNavigator({
       headerShown: false,
     },
   },
-  // LoginScreen: {
-  //   screen: LoginScreen,
-  //   navigationOptions: {
-  //     headerShown: false,
-  //   },
-  // },
+  LoginScreen: {
+    screen: LoginScreen,
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
   // ForgotScreen: {
   //   screen: ForgotScreen,
   //   navigationOptions: {

@@ -16,7 +16,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { DEFAULT_COLOR } from '../../styles/common';
 
-const Pinscreen = (props) => {
+const PinScreen = (props) => {
     const onPress = () => {
         
     };
@@ -37,12 +37,12 @@ const Pinscreen = (props) => {
                         <TouchableOpacity
                             style={styles.signup_button}
                             activeOpacity={0.7}
-                            onPress={onPress}>
+                            onPress={(e) => { props.navigation.navigate('LoginScreen')}}>
                             <Text style={styles.signup_text}>Sign Up</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             style={styles.signin_button}
-                            onPress={onPress}
+                            onPress={(e) => { props.navigation.navigate('LoginScreen') }}
                             activeOpacity={0.7}>
                             <Text style={styles.signup_text}>Log In</Text>
                         </TouchableOpacity>
@@ -52,7 +52,7 @@ const Pinscreen = (props) => {
         </View>
     );
 }
-export default Pinscreen;
+export default PinScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
     },
     signup_text: {
-        fontSize: 20,
+        fontSize: 18,
         color: 'white',
         padding: 5,
         textAlign:'center'
