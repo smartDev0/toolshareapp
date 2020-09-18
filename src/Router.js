@@ -1,5 +1,9 @@
 import React from 'react';
 import {Scene, Router, Actions} from 'react-native-router-flux';
+
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+
 import HomeScreen from './components/HomeScreen';
 import ProfileScreen from './components/ProfileScreen';
 import ToolSearchResultsScreen from './components/ToolSearchResultsScreen';

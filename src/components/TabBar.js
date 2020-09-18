@@ -23,12 +23,12 @@ const TabBar = props => {
       <Image source={postIcon} style={styles.tabBarSectionImageStyle}></Image>
       <Image source={toolsIcon} style={styles.tabBarSectionImageStyle}></Image>
       <TouchableHighlight onPress={() => { alert('You tapped the button!'); }}>
-      <Image
-        source={profileIcon}
-        style={styles.tabBarSectionImageStyle}
-        ></Image>
-
-        </TouchableHighlight>
+        <Image
+          source={profileIcon}
+          style={styles.tabBarSectionImageStyle}
+          >
+        </Image>
+      </TouchableHighlight>
     </View>
   );
 };

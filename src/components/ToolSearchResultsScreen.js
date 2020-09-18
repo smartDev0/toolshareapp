@@ -68,7 +68,7 @@ const styles = {
     marginTop: 10,
   },
   searchBarStyles: {
-    height: 40,
+    height: 50,
     marginTop: 20,
     marginLeft: 20,
     marginRight: 20,

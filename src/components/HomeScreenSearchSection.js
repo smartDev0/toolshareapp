@@ -35,7 +35,7 @@ const styles = {
     height: 250,
   },
   searchBarStyles: {
-    height: 30,
+    height: 40,
     width: 350,
     backgroundColor: 'white',
     color: 'grey',
