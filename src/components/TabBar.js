@@ -54,7 +54,7 @@ const TabBar = props => {
           </Text>
         </View>
       </TouchableHighlight>
-      <TouchableHighlight>
+      <TouchableHighlight onPress={() => { alert('You tapped the button!'); }}>
         <View style={styles.tabBarSectionImageStyle}>
           <Entypo name="user" style={{ textAlign: 'center' }} size={21} color="grey" />
           <Text style={{ fontSize: 10 }}>

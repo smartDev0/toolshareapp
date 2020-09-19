@@ -20,7 +20,11 @@ import HomeScreenSection from './../../components/HomeScreenSearchSection';
 // const lenderSectionImage = require('../../assets/images/LenderSectionImage.png');
 import TabBar from './../../components/TabBar';
 class HomeScreen extends Component { 
+    constructor(props) {
+        super(props);
+    }
     render() {
+        console.log('here is props:',this.props)
         return (
             <View style={{ flex: 1 }}>
                 <ScrollView>
@@ -64,17 +68,21 @@ class HomeScreen extends Component {
                             
                         </View>
                         <View style={styles.categorySectionsStyle}>
-                            <View style={{
-                                width: '100%'
-                            }}>
-                                <Text style={styles.textStyle}>How ToolShare Works</Text>
-                                <View style={{ height: 120, width: '100%' }}>
+                            <TouchableOpacity activeOpacity={0.7}
+                            onPress={()=>this.props.navigtaion.navigate('ToolShare')}>
+                                <View style={{
+                                    width: '100%'
+                                }}>
+                                    <Text style={styles.textStyle}>How ToolShare Works</Text>
+                                    <View style={{ height: 120, width: '100%' }}>
                                         <Image
                                             style={styles.imageStyle}
-                                        source={require("./../../../assets/images/HowToolShareWorksSectionImage.png")} 
+                                            source={require("./../../../assets/images/HowToolShareWorksSectionImage.png")}
                                         />
+                                    </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
+
                         </View>
                         <View style={styles.categorySectionsStyle}>
                             <View style={{
