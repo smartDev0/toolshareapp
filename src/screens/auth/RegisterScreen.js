@@ -282,6 +282,7 @@ class RegisterScreen extends React.Component {
                         <TouchableOpacity
                             style={styles.signup_button}
                             activeOpacity={0.7}
+                            onPress={() => this.props.navigation.navigate('HomeScreen')}
                         >
                             <Text style={styles.signup_text}>Get Stared</Text>
                         </TouchableOpacity>
