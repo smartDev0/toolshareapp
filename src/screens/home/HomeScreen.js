@@ -68,8 +68,8 @@ class HomeScreen extends Component {
                             
                         </View>
                         <View style={styles.categorySectionsStyle}>
-                            <TouchableOpacity activeOpacity={0.7}
-                            onPress={()=>this.props.navigtaion.navigate('ToolShare')}>
+                            <TouchableOpacity activeOpacity={0.5}
+                                onPress={() => this.props.navigation.navigate('ToolShareScreen')}>
                                 <View style={{
                                     width: '100%'
                                 }}>

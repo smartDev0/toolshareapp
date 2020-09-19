@@ -5,7 +5,8 @@ import { Dimensions, Platform, StyleSheet, Text, View, Image } from "react-nativ
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 //Import External Screens
-import HomeScreen from './screens/home/HomeScreen'
+import HomeScreen from './screens/home/HomeScreen';
+import ToolShare from './screens/toolShare/ToolShare';
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
 
@@ -18,10 +19,22 @@ const Home_StackNavigator = createStackNavigator({
     },
 });
 
+const ToolShare_StackNavigator = createStackNavigator({
+    ToolShareScreen: {
+        screen: ToolShare,
+        navigationOptions: {
+            headerShown: false,
+        },
+    },
+});
+
 const DrawerNavigatorRoutes = createDrawerNavigator(
     {
         HomeScreen: {
             screen: Home_StackNavigator,
+        },
+        ToolShareScreen: {
+            screen: ToolShare_StackNavigator,
         },
     }
     
