@@ -3,13 +3,12 @@ import {
     TouchableOpacity, StyleSheet,
     Image, View, Text, SafeAreaView, ScrollView
 } from 'react-native';
-class Lending extends React.Component {
-    constructor(props) {
-        super(props);
+// class Lending extends React.Component {
+const Lending = (props) => {
+    const goListingToolPage = () => {
+        console.log(props);
+        props.navigation.navigate('HomeScreen');
     }
-
-
-    render() {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <ScrollView>
@@ -124,12 +123,13 @@ class Lending extends React.Component {
                             </View>
                         </View>
                         <TouchableOpacity
+                            onPress={() => goListingToolPage()}
                             style={styles.button}
                         >
                             <Text style={styles.buttonText}>List your tools and equipment</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate('Renting')}
+                            onPress={() => props.navigation.goBack()}
                         >
                             <Text style={styles.linkText}>How does renting on ToolShare work</Text>
                         </TouchableOpacity>
@@ -137,7 +137,7 @@ class Lending extends React.Component {
                 </ScrollView>
             </SafeAreaView>
             )
-    }
+    
 
 }
 export default Lending;

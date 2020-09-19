@@ -28,7 +28,7 @@ const NavigationDrawerStructure = (navigation) => {
         </View>
     );
 }
-function TabStack() {
+const TabStack = (navigation) => {
     return (
         <Tab.Navigator
             initialRouteName="ToolShare"
@@ -55,7 +55,7 @@ function TabStack() {
                 }} />
             <Tab.Screen
                 name="Lending"
-                component={Lending}
+                component={() => Lending(navigation)}
                 options={{
                     tabBarLabel: 'Lending on ToolShare',
                 }} />
@@ -63,22 +63,25 @@ function TabStack() {
     );
 }
 
-function ToolShare({ navigation }) {
+function ToolShare(navigation) {
     return (
         <>
             <NavigationContainer>
                 <Stack.Navigator
                     initialRouteName="Renting"
                     screenOptions={{
-                        headerLeft: () => <NavigationDrawerStructure navigationProps={navigation} />,
+                        headerLeft: () => <NavigationDrawerStructure navigationProps={navigation.navigation} />,
                         headerStyle: { backgroundColor: 'white' },
                         headerTintColor: 'black',
                         headerTitleStyle: { fontWeight: '100' }
                     }}>
-                    <Stack.Screen name="TabStack" component={TabStack} options={{ title: 'How ToolShare Works' }} />
+                    <Stack.Screen
+                        name="TabStack"
+                        component={() => TabStack(navigation)}
+                        options={{ title: 'How ToolShare Works' }} />
                 </Stack.Navigator>
             </NavigationContainer>
-            <TabBar />
+            <TabBar props={navigation}/>
         </>
             
     );

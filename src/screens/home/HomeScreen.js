@@ -152,7 +152,7 @@ class HomeScreen extends Component {
                         <View style={styles.categorySectionsStyle}></View>
                     </View>
                 </ScrollView>
-                 <TabBar />
+                <TabBar props={this.props}/>
             </View>
         )
     }

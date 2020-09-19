@@ -12,7 +12,11 @@ const postIcon = require('../../assets/images/Post.jpg');
 const toolsIcon = require('../../assets/images/Tools.jpg');
 const profileIcon = require('../../assets/images/Profile.jpg');
 
-const TabBar = props => {
+const TabBar = ({props}) => {
+  const goHome = () => {
+    console.log(props);
+    props.navigation.navigate('HomeScreen');
+  }
   return (
     <View
       style={{
@@ -22,7 +26,8 @@ const TabBar = props => {
         borderTopColor: 'grey',
         borderWidth: 1,
       }}>
-      <TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => goHome() }>
           <View style={styles.tabBarSectionImageStyle}>
               <AntDesign name="search1" style={{ textAlign: 'center' }} size={20} color="grey" />
               <Text style={{fontSize: 10}}>
