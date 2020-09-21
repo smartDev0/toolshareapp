@@ -11,6 +11,8 @@ import ListingTool from './screens/listingTool/ListingTool';
 import ListingToolSlider from './screens/listingTool/ListingToolSlider';
 import Profile from './screens/profile/Profile';
 import Setting from './screens/setting/Setting';
+import Help from './screens/help/Help';
+import Feedback from './screens/feedback/Feedback';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -50,6 +52,18 @@ const NavigatorRoutes = createStackNavigator(
         },
         SettingScreen: {
             screen: Setting,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        HelpScreen: {
+            screen: Help,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        FeedbackScreen: {
+            screen: Feedback,
             navigationOptions: {
                 headerShown: false,
             },
