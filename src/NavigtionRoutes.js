@@ -10,6 +10,7 @@ import ToolShare from './screens/toolShare/ToolShare';
 import ListingTool from './screens/listingTool/ListingTool';
 import ListingToolSlider from './screens/listingTool/ListingToolSlider';
 import Profile from './screens/profile/Profile';
+import Setting from './screens/setting/Setting';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -43,6 +44,12 @@ const NavigatorRoutes = createStackNavigator(
         },
         ProfileScreen: {
             screen: Profile,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        SettingScreen: {
+            screen: Setting,
             navigationOptions: {
                 headerShown: false,
             },

@@ -16,7 +16,7 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
-export default class ListingToolSilder extends React.Component { 
+export default class Setting extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -30,24 +30,20 @@ export default class ListingToolSilder extends React.Component {
                         <TouchableOpacity
                             activeOpacity={0.7}
                             style={{ marginTop: 10, marginLeft: 5 }}
-                            onPress={() => this.props.navigation.navigate('HomeScreen')}>
-                            <Feather name="chevron-left" size={35} color="white" />
+                            onPress={() => this.props.navigation.navigate('ProfileScreen')}>
+                            <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
-                        <View style={styles.imageGroup}>
-                            <Image
-                                style={styles.image}
-                                source={require("./../../../assets/images/Avatar.png")} />
-                            <Text style={styles.profileText}>
-                                Hi,Ron
+                    </View>
+                    <View style={styles.mainContainer}>
+                        <Text style={styles.title}>
+                            Settings
                         </Text>
-                        </View>
                     </View>
                     <View style={styles.mainContainer}>
                         <View style={styles.item}>
-                            <TouchableOpacity
-                                onPress={() => this.props.navigation.navigate('SettingScreen')}>
+                            <TouchableOpacity>
                                 <Text style={styles.text}>
-                                    Settings
+                                    Notifications
                             </Text>
                             </TouchableOpacity>
 
@@ -56,7 +52,7 @@ export default class ListingToolSilder extends React.Component {
                         <View style={styles.item}>
                             <TouchableOpacity>
                                 <Text style={styles.text}>
-                                    How ToolShare works
+                                    Payment Transfers
                             </Text>
                             </TouchableOpacity>
 
@@ -65,7 +61,16 @@ export default class ListingToolSilder extends React.Component {
                         <View style={styles.item}>
                             <TouchableOpacity>
                                 <Text style={styles.text}>
-                                    Get Help
+                                    Deposite Method
+                            </Text>
+                            </TouchableOpacity>
+
+                            <View style={styles.divider}></View>
+                        </View>
+                        <View style={styles.item}>
+                            <TouchableOpacity>
+                                <Text style={styles.text}>
+                                    Terms of Service
                         </Text>
                             </TouchableOpacity>
 
@@ -74,7 +79,7 @@ export default class ListingToolSilder extends React.Component {
                         <View style={styles.item}>
                             <TouchableOpacity></TouchableOpacity>
                             <Text style={styles.text}>
-                                List Equipment
+                                Version 1.01
                         </Text>
                             <View style={styles.divider}></View>
                         </View>
@@ -88,9 +93,9 @@ export default class ListingToolSilder extends React.Component {
                             <View style={styles.divider}></View>
                         </View>
                         <View style={styles.item}>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
                                 <Text style={styles.text}>
-                                    Earning
+                                    Logout
                             </Text>
                             </TouchableOpacity>
                             <View style={styles.divider}></View>
@@ -98,8 +103,9 @@ export default class ListingToolSilder extends React.Component {
                     </View>
                 </ScrollView>
                 <TabBar props={this.props}/>
-            </View>
-            )
+             </View>
+           
+        )
     }
 }
 
@@ -109,8 +115,10 @@ const styles = StyleSheet.create({
         // flexDirection: "column",
     },
     headerBackground: {
-        backgroundColor: DEFAULT_COLOR,
-        height: 150
+
+    },
+    title: {
+        fontSize:20
     },
     image: {
         height: 60,
@@ -124,23 +132,23 @@ const styles = StyleSheet.create({
     },
     divider: {
         borderColor: 'grey',
-        borderWidth:0.5
+        borderWidth: 0.5
     },
     mainContainer: {
         marginHorizontal: 10,
-        marginTop:40
+        marginTop: 10
     },
     text: {
         fontSize: 16,
-        marginVertical:4
+        marginVertical: 4
     },
     item: {
-        marginVertical:5
+        marginVertical: 5
     },
     profileText: {
         position: 'absolute',
         left: 70,
         marginTop: 10,
-        color:'white'
+        color: 'white'
     }
 });
