@@ -10,31 +10,37 @@ import ToolShare from './screens/toolShare/ToolShare';
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
 
-const Home_StackNavigator = createStackNavigator({
-    HomeScreen: {
-        screen: HomeScreen,
-        navigationOptions: {
-            headerShown: false,
-        },
-    },
-});
+// const Home_StackNavigator = createStackNavigator({
+//     HomeScreen: {
+//         screen: HomeScreen,
+//         navigationOptions: {
+//             headerShown: false,
+//         },
+//     },
+// });
 
-const ToolShare_StackNavigator = createStackNavigator({
-    ToolShareScreen: {
-        screen: ToolShare,
-        navigationOptions: {
-            headerShown: false,
-        },
-    },
-});
+// const ToolShare_StackNavigator = createStackNavigator({
+//     ToolShareScreen: {
+//         screen: ToolShare,
+//         navigationOptions: {
+//             headerShown: false,
+//         },
+//     },
+// });
 
-const DrawerNavigatorRoutes = createDrawerNavigator(
+const DrawerNavigatorRoutes = createStackNavigator(
     {
         HomeScreen: {
-            screen: Home_StackNavigator,
+            screen: HomeScreen,
+            navigationOptions: {
+                headerShown: false,
+            },
         },
         ToolShareScreen: {
-            screen: ToolShare_StackNavigator,
+            screen: ToolShare,
+            navigationOptions: {
+                headerShown: false,
+            },
         },
     }
     

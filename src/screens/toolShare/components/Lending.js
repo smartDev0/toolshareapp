@@ -3,12 +3,17 @@ import {
     TouchableOpacity, StyleSheet,
     Image, View, Text, SafeAreaView, ScrollView
 } from 'react-native';
-// class Lending extends React.Component {
-const Lending = (props) => {
-    const goListingToolPage = () => {
-        console.log(props);
-        props.navigation.navigate('HomeScreen');
+class Lending extends React.Component {
+    constructor(props) {
+        super(props)
     }
+    goListingToolPage = () => {
+        this.props.privatNavigation.navigation.push('HomeScreen')
+    }
+    goBack = () => {
+        this.props.navigation.goBack();
+    }
+    render() {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <ScrollView>
@@ -20,10 +25,10 @@ const Lending = (props) => {
                                 <View style={{ flex: 1 }}>
                                     <Text>Post Tools.</Text>
                                     <Text style={styles.text}>
-                                        It’s free and easy to post tools and equipment on ToolShare. 
+                                        It’s free and easy to post tools and equipment on ToolShare.
                                     </Text>
                                     <Text style={styles.subText}>
-                                        Simply  upload photos, post specs, and set a price.  
+                                        Simply  upload photos, post specs, and set a price.
                                     </Text>
                                 </View>
                             </View>
@@ -50,10 +55,10 @@ const Lending = (props) => {
                                 <View style={{ flex: 1 }}>
                                     <Text>Receive Request.</Text>
                                     <Text style={styles.text} >
-                                        Receive requests, you can aceppt and decline. 
+                                        Receive requests, you can aceppt and decline.
                                     </Text>
                                     <Text style={styles.subText}>
-                                        Get in contact with your renter and arrange a meeting time. 
+                                        Get in contact with your renter and arrange a meeting time.
                                     </Text>
                                 </View>
                             </View>
@@ -64,10 +69,10 @@ const Lending = (props) => {
                                 <View style={{ flex: 1 }}>
                                     <Text>Meet Up.</Text>
                                     <Text style={styles.text}>
-                                        Meet up at a location pre-determined by you and the renter. 
+                                        Meet up at a location pre-determined by you and the renter.
                                     </Text>
                                     <Text style={styles.subText}>
-                                        Protect yourself by taking pictures of the tool working order and condition at each exchange. 
+                                        Protect yourself by taking pictures of the tool working order and condition at each exchange.
                                     </Text>
                                 </View>
                             </View>
@@ -94,7 +99,7 @@ const Lending = (props) => {
                                 <View style={{ flex: 1 }}>
                                     <Text>Kick back and Relax.</Text>
                                     <Text style={styles.text} >
-                                        Your tool is working for you making money.  
+                                        Your tool is working for you making money.
                                     </Text>
                                     <Text style={styles.subText}>
                                     </Text>
@@ -107,7 +112,7 @@ const Lending = (props) => {
                                 <View style={{ flex: 1 }}>
                                     <Text>Pick up & Get Paid.</Text>
                                     <Text style={styles.text}>
-                                        After you the rental is complete, we will transfer your funds every month.  
+                                        After you the rental is complete, we will transfer your funds every month.
                                     </Text>
                                     <Text style={styles.subText}>
                                     </Text>
@@ -123,20 +128,22 @@ const Lending = (props) => {
                             </View>
                         </View>
                         <TouchableOpacity
-                            onPress={() => goListingToolPage()}
+                            onPress={() => this.goListingToolPage()}
                             style={styles.button}
                         >
                             <Text style={styles.buttonText}>List your tools and equipment</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                            onPress={() => props.navigation.goBack()}
+                            onPress={() => this.goBack()}
                         >
                             <Text style={styles.linkText}>How does renting on ToolShare work</Text>
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
             </SafeAreaView>
-            )
+        )
+    }
+
     
 
 }

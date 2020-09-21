@@ -28,7 +28,7 @@ const NavigationDrawerStructure = (navigation) => {
         </View>
     );
 }
-const TabStack = (navigation) => {
+const TabStack = (privatNavigation) => {
     return (
         <Tab.Navigator
             initialRouteName="ToolShare"
@@ -50,12 +50,14 @@ const TabStack = (navigation) => {
             <Tab.Screen
                 name="Renting"
                 component={Renting}
+
                 options={{
                     tabBarLabel: 'Renting on ToolShare',
                 }} />
             <Tab.Screen
                 name="Lending"
-                component={() => Lending(navigation)}
+                // component={() => <Lending screenProps={privatNavigation} />}
+                component={({ navigation }) => <Lending navigation={navigation} privatNavigation={privatNavigation} number={1} />}
                 options={{
                     tabBarLabel: 'Lending on ToolShare',
                 }} />
