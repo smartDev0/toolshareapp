@@ -28,18 +28,21 @@ export default class ListingToolSilder extends React.Component {
                 <ScrollView style={styles.container}>
                     <View style={styles.headerBackground}>
                         <TouchableOpacity
-                            activeOpacity={0.7}
                             style={{ marginTop: 10, marginLeft: 5 }}
                             onPress={() => this.props.navigation.navigate('HomeScreen')}>
                             <Feather name="chevron-left" size={35} color="white" />
                         </TouchableOpacity>
                         <View style={styles.imageGroup}>
-                            <Image
-                                style={styles.image}
-                                source={require("./../../../assets/images/Avatar.png")} />
+                            <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('ProfileDetailScreen')}>
+                                <Image
+                                    style={styles.image}
+                                    source={require("./../../../assets/images/Avatar.png")} />
+                            </TouchableOpacity>
+                            
                             <Text style={styles.profileText}>
                                 Hi,Ron
-                        </Text>
+                            </Text>
                         </View>
                     </View>
                     <View style={styles.mainContainer}>

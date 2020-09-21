@@ -10,6 +10,7 @@ import ToolShare from './screens/toolShare/ToolShare';
 import ListingTool from './screens/listingTool/ListingTool';
 import ListingToolSlider from './screens/listingTool/ListingToolSlider';
 import Profile from './screens/profile/Profile';
+import ProfileDetail from './screens/profile/ProfileDetail';
 import Setting from './screens/setting/Setting';
 import Help from './screens/help/Help';
 import Feedback from './screens/feedback/Feedback';
@@ -46,6 +47,12 @@ const NavigatorRoutes = createStackNavigator(
         },
         ProfileScreen: {
             screen: Profile,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        ProfileDetailScreen: {
+            screen: ProfileDetail,
             navigationOptions: {
                 headerShown: false,
             },

@@ -1,0 +1,147 @@
+import React from 'react';
+import {
+    StyleSheet,
+    TextInput,
+    View,
+    Text,
+    ScrollView,
+    Image,
+    Keyboard,
+    TouchableOpacity,
+    KeyboardAvoidingView,
+    Platform,
+    Button,
+    ImageBackground
+} from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
+import { DEFAULT_COLOR } from './../../styles/common';
+import TabBar from './../../components/TabBar';
+export default class ProfileDetail extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    componentDidMount() {
+    }
+    render() {
+        return (
+            <View style={{ flex: 1 }}>
+                <ScrollView style={styles.container}>
+                    <View style={styles.headerBackground}>
+                        <TouchableOpacity
+                            activeOpacity={0.7}
+                            style={{ marginTop: 10, marginLeft: 5 }}
+                            onPress={() => this.props.navigation.navigate('HomeScreen')}>
+                            <Feather name="chevron-left" size={35} color="white" />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this.props.navigation.navigate('ProfileEditScreen')}
+                            style={{ position:'absolute',right:10, top:20 }}>
+                            <Text style={{color:'white'}}>Edit</Text>
+                        </TouchableOpacity>
+                        <View style={styles.imageGroup}>
+                            <Image
+                                style={styles.image}
+                                source={require("./../../../assets/images/Avatar.png")} />
+                            <Text style={styles.profileText}>
+                                Hi!,I'm Ron
+                            </Text>
+                        </View>
+                    </View>
+                    <View style={styles.mainContainer}>
+                        <Text style={styles.text}>About</Text>
+                        <Text style={styles.description}>Hi, I am Ron!
+                        I have been colltecting and tinkering with tools for the last 40 years. So I’ve accumulated quite the collection. I mostly like to take on the odd renovation and wood working projects. 
+                        </Text>
+                        <View style={styles.divider}></View>
+                        <Text style={styles.text}>Ron's Equipment</Text>
+                        <View style={{
+                            flexDirection: 'row',
+                            marginVertical: 5,
+                            alignItems: 'center',}}>
+                            <View style={{ flex:0.3}}>
+                                <Image source={require('./../../../assets/images/Equipment1.png')}></Image>
+                                <Text style={styles.imageText}>Milwaukee Drill</Text>
+                            </View>
+                            <View style={{ flex: 0.05 }}></View>
+                            <View style={{ flex: 0.3 }}>
+                                <Image source={require('./../../../assets/images/Equipment2.png')}></Image>
+                                <Text style={styles.imageText}>Makita Table Saw</Text>
+                            </View>
+                            <View style={{ flex: 0.05 }}></View>
+                            <View style={{ flex: 0.3 }}>
+                                <Image source={require('./../../../assets/images/Equipment3.png')}></Image>
+                                <Text style={styles.imageText}>Caulking gun</Text>
+                            </View>
+                        </View>
+                        <View style={styles.divider}></View>
+                        <Text style={styles.text}>Location</Text>
+                        <View style={{ height: 180 }}></View>
+                        <View>
+                            <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('ProfileEditScreen')}>
+                                <Text style={styles.activeText}>Edit Profile</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                </ScrollView>
+                <TabBar props={this.props} />
+            </View>
+        )
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        // flex: 1,
+        // flexDirection: "column",
+    },
+    headerBackground: {
+        backgroundColor: DEFAULT_COLOR,
+        height: 150
+    },
+    image: {
+        height: 60,
+        width: 60,
+        borderRadius: 25,
+    },
+    imageGroup: {
+        position: 'absolute',
+        top: 120,
+        left: 25
+    },
+    imageText: {
+        fontSize:12
+    },
+    divider: {
+        borderColor: 'grey',
+        borderWidth: 0.5,
+        marginVertical:10
+    },
+    mainContainer: {
+        marginHorizontal: 10,
+        marginTop: 40
+    },
+    text: {
+        fontSize: 16,
+        marginVertical: 4
+    },
+    description: {
+        fontSize:13
+    },
+    item: {
+        marginVertical: 5
+    },
+    profileText: {
+        position: 'absolute',
+        left: 70,
+        marginTop: 10,
+        color: 'white'
+    },
+    activeText: {
+        color: DEFAULT_COLOR,
+        fontSize: 14,
+        textAlign: 'center',
+        marginVertical: 10
+    }
+});
