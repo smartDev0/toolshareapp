@@ -7,6 +7,7 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 //Import External Screens
 import HomeScreen from './screens/home/HomeScreen';
 import ToolShare from './screens/toolShare/ToolShare';
+import ListingTool from './screens/listingTool/ListingTool';
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
 
@@ -38,6 +39,12 @@ const DrawerNavigatorRoutes = createStackNavigator(
         },
         ToolShareScreen: {
             screen: ToolShare,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        ListingToolScreen: {
+            screen: ListingTool,
             navigationOptions: {
                 headerShown: false,
             },

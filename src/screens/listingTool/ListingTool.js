@@ -14,6 +14,7 @@ import {
     ImageBackground
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Feather from 'react-native-vector-icons/Feather';
 import { DEFAULT_COLOR } from './../../styles/common';
 class ListingTool extends React.Component{
     constructor(props) {
@@ -23,25 +24,39 @@ class ListingTool extends React.Component{
         return (
             <View style={styles.container}>
                 <ImageBackground
-                    style={styles.image_background}
+                    style={styles.imageBackground}
                     source={require("./../../../assets/images/ListingTools.png")}>
-                    <View style={styles.image_background_color}>
-                        <View style={styles.button_group}>
-                            <Text style={styles.text}>
-                                Connect, Share, Build and Repair.
-                        </Text>
+                    <View style={styles.imageBackgroundColor}>
+                        <View>
                             <TouchableOpacity
-                                style={styles.signup_button}
+                                activeOpacity={0.7}
+                                onPress={() => this.props.navigation.navigate('HomeScreen')}>
+                                <Feather name="chevron-left" size={35} color="white" />
+                            </TouchableOpacity>
+                        </View>
+                        <View>
+                            <Text style={styles.title}>
+                                List your tools and equipement.
+                            </Text>
+                        </View>
+                        <View>
+                            <Text style={styles.description}>
+                                Make your tools work for you. List equipment in 4 steps and start earning. 
+                            </Text>
+                        </View>
+                        <View style={styles.buttonGroup}>
+                            <TouchableOpacity
+                                style={styles.button}
                                 activeOpacity={0.7}
                                 onPress={(e) => { this.props.navigation.navigate('RegisterScreen') }}>
-                                <Text style={styles.signup_text}>Sign Up</Text>
+                                <Text style={styles.buttonText}>List your equipment</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity
-                                style={styles.signin_button}
-                                onPress={(e) => { this.props.navigation.navigate('LoginScreen') }}
-                                activeOpacity={0.7}>
-                                <Text style={styles.signup_text}>Log In</Text>
+                            <TouchableOpacity>
+                                <Text style={styles.text}>
+                                    How does lending on Toolshare work?
+                                </Text>
                             </TouchableOpacity>
+
                         </View>
                     </View>
                 </ImageBackground>
@@ -57,7 +72,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         backgroundColor: 'rgba(0,0,0,.6)'
     },
-    image_background: {
+    imageBackground: {
         flex: 1,
         resizeMode: "cover",
     },
@@ -68,23 +83,37 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 120
     },
-    image_background_color: {
+    imageBackgroundColor: {
         backgroundColor: 'rgba(0,0,0,.3)',
         height: '100%',
         width: '100%',
     },
-    button_group: {
+    buttonGroup: {
         flex: 1,
         justifyContent: 'flex-end',
         marginBottom: 30
     },
     text: {
-        color: "white",
-        fontSize: 22,
+        color: DEFAULT_COLOR,
+        fontSize: 16,
         fontWeight: '500',
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop:10
     },
-    signup_button: {
+    title: {
+        color: 'white',
+        fontSize: 22,
+        textAlign: 'center',
+        marginTop:10
+    },
+    description: {
+        color: 'white',
+        fontSize: 18,
+        textAlign: 'center',
+        marginTop: 30,
+        marginHorizontal:20
+    },
+    button: {
         marginTop: 10,
         marginHorizontal: 15,
         backgroundColor: DEFAULT_COLOR,
@@ -93,8 +122,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
     },
-    signup_text: {
-        fontSize: 18,
+    buttonText: {
+        fontSize: 16,
         color: 'white',
         padding: 5,
         textAlign: 'center'

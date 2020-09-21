@@ -8,7 +8,7 @@ class Lending extends React.Component {
         super(props)
     }
     goListingToolPage = () => {
-        this.props.privatNavigation.navigation.push('HomeScreen')
+        this.props.privatNavigation.navigation.navigate('ListingToolScreen')
     }
     goBack = () => {
         this.props.navigation.goBack();
