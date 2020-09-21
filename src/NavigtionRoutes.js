@@ -8,28 +8,13 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import HomeScreen from './screens/home/HomeScreen';
 import ToolShare from './screens/toolShare/ToolShare';
 import ListingTool from './screens/listingTool/ListingTool';
+import ListingToolSlider from './screens/listingTool/ListingToolSlider';
+
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
 
-// const Home_StackNavigator = createStackNavigator({
-//     HomeScreen: {
-//         screen: HomeScreen,
-//         navigationOptions: {
-//             headerShown: false,
-//         },
-//     },
-// });
 
-// const ToolShare_StackNavigator = createStackNavigator({
-//     ToolShareScreen: {
-//         screen: ToolShare,
-//         navigationOptions: {
-//             headerShown: false,
-//         },
-//     },
-// });
-
-const DrawerNavigatorRoutes = createStackNavigator(
+const NavigatorRoutes = createStackNavigator(
     {
         HomeScreen: {
             screen: HomeScreen,
@@ -49,7 +34,13 @@ const DrawerNavigatorRoutes = createStackNavigator(
                 headerShown: false,
             },
         },
+        ListingToolSliderScreen: {
+            screen: ListingToolSlider,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
     }
     
 );
-export default DrawerNavigatorRoutes;
+export default NavigatorRoutes;

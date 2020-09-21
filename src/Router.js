@@ -12,7 +12,7 @@ import PinScreen from './screens/auth/PinScreen';
 import LoginScreen from './screens/auth/LoginScreen';
 import ForgotScreen from './screens/auth/ForgotScreen';
 import RegisterScreen from './screens/auth/RegisterScreen';
-import DrawerNavigationRoutes from './DrawerNavigtionRoutes';
+import NavigationRoutes from './NavigtionRoutes';
 const Auth = createStackNavigator({
   //Stack Navigator for Login and Sign up Screen
   PinScreen: {
@@ -87,9 +87,9 @@ const RouterComponent = createSwitchNavigator({
     /* Auth Navigator which includer Login Signup will come once */
     screen: Auth,
   },
-  DrawerNavigationRoutes: {
+  NavigationRoutes: {
     /* Navigation Drawer as a landing page */
-    screen: DrawerNavigationRoutes,
+    screen: NavigationRoutes,
     navigationOptions: {
       /* Hiding header for Navigation Drawer as we will use our custom header */
       headerShown: false,

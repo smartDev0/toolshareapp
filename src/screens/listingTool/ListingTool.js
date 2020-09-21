@@ -48,7 +48,7 @@ class ListingTool extends React.Component{
                             <TouchableOpacity
                                 style={styles.button}
                                 activeOpacity={0.7}
-                                onPress={(e) => { this.props.navigation.navigate('RegisterScreen') }}>
+                                onPress={(e) => { this.props.navigation.navigate('ListingToolSliderScreen') }}>
                                 <Text style={styles.buttonText}>List your equipment</Text>
                             </TouchableOpacity>
                             <TouchableOpacity>
