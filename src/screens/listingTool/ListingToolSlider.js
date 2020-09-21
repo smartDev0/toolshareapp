@@ -66,7 +66,9 @@ export default class ListingToolSilder extends React.Component {
                 <ImageBackground
                     style={styles.imageBackground}
                     source={require("./../../../assets/images/ListingTools.png")}>
-                    <TouchableOpacity style={{
+                    <TouchableOpacity
+                        onPress={(e) => { this.props.navigation.navigate('HomeScreen') }}
+                        style={{
                         marginLeft: 10,
                         marginTop:10
                     }}>

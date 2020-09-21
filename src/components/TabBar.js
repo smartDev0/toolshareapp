@@ -59,7 +59,7 @@ const TabBar = ({props}) => {
           </Text>
         </View>
       </TouchableHighlight>
-      <TouchableHighlight onPress={() => { alert('You tapped the button!'); }}>
+      <TouchableHighlight onPress={() => props.navigation.navigate('ProfileScreen')}>
         <View style={styles.tabBarSectionImageStyle}>
           <Entypo name="user" style={{ textAlign: 'center' }} size={21} color="grey" />
           <Text style={{ fontSize: 10 }}>

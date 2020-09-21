@@ -9,6 +9,7 @@ import HomeScreen from './screens/home/HomeScreen';
 import ToolShare from './screens/toolShare/ToolShare';
 import ListingTool from './screens/listingTool/ListingTool';
 import ListingToolSlider from './screens/listingTool/ListingToolSlider';
+import Profile from './screens/profile/Profile';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -36,6 +37,12 @@ const NavigatorRoutes = createStackNavigator(
         },
         ListingToolSliderScreen: {
             screen: ListingToolSlider,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        ProfileScreen: {
+            screen: Profile,
             navigationOptions: {
                 headerShown: false,
             },

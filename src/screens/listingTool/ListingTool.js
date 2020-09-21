@@ -13,7 +13,6 @@ import {
     Button,
     ImageBackground
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import { DEFAULT_COLOR } from './../../styles/common';
 class ListingTool extends React.Component{
