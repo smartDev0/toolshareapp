@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {View, Image, Text, ScrollView} from 'react-native';
-import {HEADER_TEXT_BOLD_FONT} from '../styles/common';
 import ToolSearchBar from './ToolSearchBar';
 import {connect} from 'react-redux';
 const defaultSearchResultImage = require('../../assets/images/imgNotAvailable.jpg');
@@ -85,13 +84,11 @@ const styles = {
     justifyContent: 'center',
   },
   searchResultHeaderText: {
-    fontFamily: HEADER_TEXT_BOLD_FONT,
     fontSize: 15,
     marginLeft: 20,
     marginTop: 5,
   },
   searchTermResultsText: {
-    fontFamily: HEADER_TEXT_BOLD_FONT,
     fontSize: 20,
     marginLeft: 20,
     marginTop: 5,

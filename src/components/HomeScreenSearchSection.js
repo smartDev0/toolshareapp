@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { View, ImageBackground, TextInput, StyleSheet, Text} from 'react-native';
-import {HEADER_TEXT_BOLD_FONT} from '../styles/common';
 const headerImage = require('../../assets/images/HomePageHeaderImage.jpg');
 import ToolSearchBar from './ToolSearchBar';
 
@@ -44,7 +43,6 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: 'white',
-    fontFamily: HEADER_TEXT_BOLD_FONT,
     fontSize: 25,
     width: 300,
     marginLeft: 15,
