@@ -43,7 +43,8 @@ const TabBar = ({props}) => {
           </Text>
         </View>
       </TouchableHighlight>
-      <TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => props.navigation.navigate('ListingToolScreen')}>
         <View style={styles.tabBarSectionImageStyle}>
           <Feather name="plus-square" style={{ textAlign: 'center' }} size={21} color="grey" />
           <Text style={{ fontSize: 10 }}>

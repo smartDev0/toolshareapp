@@ -371,7 +371,6 @@ const styles = StyleSheet.create({
     image: {
         height: 200,
         width: 200,
-        textAlign: 'center',
     },
     imageGroup: {
         position: 'absolute',

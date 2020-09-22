@@ -6,6 +6,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 //Import External Screens
 import HomeScreen from './screens/home/HomeScreen';
+import Search from './screens/search/Search';
 import ToolShare from './screens/toolShare/ToolShare';
 import ListingTool from './screens/listingTool/ListingTool';
 import ListingToolSlider from './screens/listingTool/ListingToolSlider';
@@ -24,6 +25,12 @@ const NavigatorRoutes = createStackNavigator(
     {
         HomeScreen: {
             screen: HomeScreen,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        SearchScreen: {
+            screen: Search,
             navigationOptions: {
                 headerShown: false,
             },

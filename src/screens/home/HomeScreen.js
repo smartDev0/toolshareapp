@@ -24,7 +24,6 @@ class HomeScreen extends Component {
         super(props);
     }
     render() {
-        console.log('here is props:',this.props)
         return (
             <View style={{ flex: 1 }}>
                 <ScrollView>
@@ -85,69 +84,89 @@ class HomeScreen extends Component {
 
                         </View>
                         <View style={styles.categorySectionsStyle}>
-                            <View style={{
-                                width: '100%'
-                            }}>
-                                <Text style={styles.textStyle}>Hand Tools</Text>
-                                <View style={{ height: 120, width: '100%' }}>
-                                    <Image
-                                        style={styles.imageStyle}
-                                        source={require("./../../../assets/images/HandToolsSectionImage.png")}
-                                    />
+                            <TouchableOpacity activeOpacity={0.5}
+                                onPress={() => this.props.navigation.navigate('SearchScreen')}>
+                                <View style={{
+                                    width: '100%'
+                                }}>
+                                    <Text style={styles.textStyle}>Hand Tools</Text>
+                                    <View style={{ height: 120, width: '100%' }}>
+                                        <Image
+                                            style={styles.imageStyle}
+                                            source={require("./../../../assets/images/HandToolsSectionImage.png")}
+                                        />
+                                    </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
+                            
                         </View>
                         <View style={styles.categorySectionsStyle}>
-                            <View style={{
-                                width: '100%'
-                            }}>
-                                <Text style={styles.textStyle}>Power Tools</Text>
-                                <View style={{ height: 120, width: '100%' }}>
-                                    <Image
-                                        style={styles.imageStyle}
-                                        source={require("./../../../assets/images/PowerToolsSectionImage.png")}
-                                    />
+                            <TouchableOpacity activeOpacity={0.5}
+                                onPress={() => this.props.navigation.navigate('SearchScreen')}>
+                                <View style={{
+                                    width: '100%'
+                                }}>
+                                    <Text style={styles.textStyle}>Power Tools</Text>
+                                    <View style={{ height: 120, width: '100%' }}>
+                                        <Image
+                                            style={styles.imageStyle}
+                                            source={require("./../../../assets/images/PowerToolsSectionImage.png")}
+                                        />
+                                    </View>
                                 </View>
+
+                                </TouchableOpacity>
                             </View>
+                        <View style={styles.categorySectionsStyle}>
+                            <TouchableOpacity activeOpacity={0.5}
+                                onPress={() => this.props.navigation.navigate('SearchScreen')}>
+                                <View style={{
+                                    width: '100%'
+                                }}>
+                                    <Text style={styles.textStyle}>Ladders & Scaffolding</Text>
+                                    <View style={{ height: 120, width: '100%' }}>
+                                        <Image
+                                            style={styles.imageStyle}
+                                            source={require("./../../../assets/images/LadderSectionImage.png")}
+                                        />
+                                    </View>
+                                </View>
+
+                            </TouchableOpacity>
                         </View>
                         <View style={styles.categorySectionsStyle}>
-                            <View style={{
-                                width: '100%'
-                            }}>
-                                <Text style={styles.textStyle}>Ladders & Scaffolding</Text>
-                                <View style={{ height: 120, width: '100%' }}>
-                                    <Image
-                                        style={styles.imageStyle}
-                                        source={require("./../../../assets/images/LadderSectionImage.png")}
-                                    />
+                            <TouchableOpacity activeOpacity={0.5}
+                                onPress={() => this.props.navigation.navigate('SearchScreen')}>
+                                <View style={{
+                                    width: '100%'
+                                }}>
+                                    <Text style={styles.textStyle}>Trailers</Text>
+                                    <View style={{ height: 120, width: '100%' }}>
+                                        <Image
+                                            style={styles.imageStyle}
+                                            source={require("./../../../assets/images/TrailersSectionImage.png")}
+                                        />
+                                    </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
+                            
                         </View>
                         <View style={styles.categorySectionsStyle}>
-                            <View style={{
-                                width: '100%'
-                            }}>
-                                <Text style={styles.textStyle}>Trailers</Text>
-                                <View style={{ height: 120, width: '100%' }}>
-                                    <Image
-                                        style={styles.imageStyle}
-                                        source={require("./../../../assets/images/TrailersSectionImage.png")}
-                                    />
+                            <TouchableOpacity activeOpacity={0.5}
+                                onPress={() => this.props.navigation.navigate('ToolShareScreen')}>
+                                <View style={{
+                                    width: '100%'
+                                }}>
+                                    <Text style={styles.textStyle}>Earn money renting tools on ToolShare</Text>
+                                    <View style={{ height: 120, width: '100%' }}>
+                                        <Image
+                                            style={styles.imageStyle}
+                                            source={require("./../../../assets/images/LenderSectionImage.png")}
+                                        />
+                                    </View>
                                 </View>
-                            </View>
-                        </View>
-                        <View style={styles.categorySectionsStyle}>
-                            <View style={{
-                                width: '100%'
-                            }}>
-                                <Text style={styles.textStyle}>Earn money renting tools on ToolShare</Text>
-                                <View style={{ height: 120, width: '100%' }}>
-                                    <Image
-                                        style={styles.imageStyle}
-                                        source={require("./../../../assets/images/LenderSectionImage.png")}
-                                    />
-                                </View>
-                            </View>
+                            </TouchableOpacity>
+                            
                         </View>
                         <View style={styles.categorySectionsStyle}></View>
                     </View>
