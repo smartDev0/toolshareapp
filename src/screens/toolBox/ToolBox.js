@@ -8,8 +8,9 @@ import { TouchableOpacity, StyleSheet, View, Text, SafeAreaView, Image } from 'r
 import Feather from 'react-native-vector-icons/Feather';
 import TabBar from './../../components/TabBar';
 import Tool from './components/Tool';
-import Reservation from './components/Reservation'
-import Request from './components/Request'
+import Reservation from './components/Reservation';
+import Request from './components/Request';
+import Earning from './components/Earning';
 const Stack = createStackNavigator();
 const Tab = createMaterialTopTabNavigator();
 
@@ -67,7 +68,7 @@ const TabStack = (privatNavigation) => {
                 }} />
             <Tab.Screen
                 name="Earning"
-                component={Tool}
+                component={Earning}
                 options={{
                     tabBarLabel: 'Earnings',
                 }} />
