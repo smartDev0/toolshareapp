@@ -11,7 +11,6 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { DEFAULT_COLOR } from './../../styles/common';
-import TabBar from './../../components/TabBar';
 import RNPickerSelect from 'react-native-picker-select';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -236,7 +235,7 @@ class EquipmentLocation extends React.Component {
                     <TouchableOpacity
                         style={styles.button}
                         activeOpacity={0.7}
-                        onPress={() => this.props.navigation.navigate('EquipmentLocationScreen')}
+                        onPress={() => this.props.navigation.navigate('EquipmentPhotoScreen')}
                     >
                         <Text style={styles.buttonText}>NEXT</Text>
                     </TouchableOpacity>

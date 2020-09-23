@@ -18,6 +18,9 @@ import Help from './screens/help/Help';
 import Feedback from './screens/feedback/Feedback';
 import EquipmentDetail from './screens/equipment/EquipmentDetail';
 import EquipmentLocation from './screens/equipment/EquipmentLocation';
+import EquipmentPhoto from './screens/equipment/EquipmentPhoto';
+import EquipmentRequirement from './screens/equipment/EquipmentRequirement';
+
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -99,6 +102,18 @@ const NavigatorRoutes = createStackNavigator(
         },
         EquipmentLocationScreen: {
             screen: EquipmentLocation,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        EquipmentPhotoScreen: {
+            screen: EquipmentPhoto,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        EquipmentRequirementScreen: {
+            screen: EquipmentRequirement,
             navigationOptions: {
                 headerShown: false,
             },
