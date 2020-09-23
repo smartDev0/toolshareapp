@@ -90,7 +90,7 @@ export default class ListingToolSilder extends React.Component {
                         <TouchableOpacity
                             style={styles.button}
                             activeOpacity={0.7}
-                            onPress={(e) => { this.props.navigation.navigate('ListingToolSliderScreen') }}>
+                            onPress={(e) => { this.props.navigation.navigate('EquipmentDetailScreen') }}>
                             <Text style={styles.buttonText}>{item.buttonText}</Text>
                         </TouchableOpacity>
                     </View>):(<View></View>)}
@@ -101,7 +101,8 @@ export default class ListingToolSilder extends React.Component {
     _onDone = () => {
         // User finished the introduction. Show real app through
         // navigation or simply by controlling state
-        this.setState({ showRealApp: true });
+        // this.setState({ showRealApp: true });
+        this.props.navigation.navigate('EquipmentDetailScreen');
     }
     render() {
         if (this.state.showRealApp) {

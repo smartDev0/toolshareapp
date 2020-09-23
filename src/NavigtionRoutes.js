@@ -16,6 +16,7 @@ import ProfileEdit from './screens/profile/ProfileEdit';
 import Setting from './screens/setting/Setting';
 import Help from './screens/help/Help';
 import Feedback from './screens/feedback/Feedback';
+import EquipmentDetail from './screens/equipment/EquipmentDetail';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -85,6 +86,12 @@ const NavigatorRoutes = createStackNavigator(
         },
         FeedbackScreen: {
             screen: Feedback,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        EquipmentDetailScreen: {
+            screen: EquipmentDetail,
             navigationOptions: {
                 headerShown: false,
             },
