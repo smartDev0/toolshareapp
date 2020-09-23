@@ -73,7 +73,7 @@ class EquipmentRequirement extends React.Component {
                     <TouchableOpacity
                         style={styles.button}
                         activeOpacity={0.7}
-                        onPress={() => this.props.navigation.navigate('EquipmentPhotoScreen')}
+                        onPress={() => this.props.navigation.navigate('EquipmentReviewScreen')}
                     >
                         <Text style={styles.buttonText}>FINISH</Text>
                     </TouchableOpacity>

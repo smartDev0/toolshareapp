@@ -22,7 +22,7 @@ class EquipmentPhoto extends React.Component {
                 }}>
                     <TouchableOpacity
                         style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
-                        onPress={() => this.props.navigation.navigate('EquipmentDetailScreen')}>
+                        onPress={() => this.props.navigation.navigate('EquipmentLocationScreen')}>
                         <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                     </TouchableOpacity>
                 </View>

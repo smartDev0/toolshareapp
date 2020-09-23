@@ -36,7 +36,7 @@ class EquipmentDetail extends React.Component {
                 }}>
                     <TouchableOpacity
                         style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
-                        onPress={() => this.props.navigation.navigate('HomeScreen')}>
+                        onPress={() => this.props.navigation.navigate('EquipmentlistingScreen')}>
                         <AntDesign name="close" size={26} color={DEFAULT_COLOR} />
                     </TouchableOpacity>
                 </View>

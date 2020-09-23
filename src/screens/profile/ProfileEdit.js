@@ -20,36 +20,36 @@ import TabBar from './../../components/TabBar';
 import RNPickerSelect from 'react-native-picker-select';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-export default class ProfileEdit extends React.Component { 
+export default class ProfileEdit extends React.Component {
     constructor(props) {
         super(props);
     }
     componentDidMount() {
     }
-    render() { 
+    render() {
         return (
             <View style={{ flex: 1 }}>
-                
-                    <View style={{
-                        flexDirection: 'row',
-                        paddingVertical: 12,
-                    }}>
-                        <TouchableOpacity
-                            style={{ marginTop: 15, marginLeft: 5, position:'absolute', zIndex:10 }}
-                            onPress={() => this.props.navigation.navigate('ProfileDetailScreen')}>
-                            <AntDesign name="close" size={26} color={DEFAULT_COLOR} />
-                        </TouchableOpacity>
-                        <View style={{width:'100%'}}>
-                            <Text style={styles.profileTitle}>Edit Profile</Text>
-                        </View>
-                        <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate('ProfileScreen')}
-                            style={{ position: 'absolute', right: 10, top: 20 }}>
-                            <Text style={{ color: 'black' }}>Save</Text>
-                        </TouchableOpacity>
+
+                <View style={{
+                    flexDirection: 'row',
+                    paddingVertical: 12,
+                }}>
+                    <TouchableOpacity
+                        style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                        onPress={() => this.props.navigation.navigate('ProfileDetailScreen')}>
+                        <AntDesign name="close" size={26} color={DEFAULT_COLOR} />
+                    </TouchableOpacity>
+                    <View style={{ width: '100%' }}>
+                        <Text style={styles.profileTitle}>Edit Profile</Text>
                     </View>
-                    <View style={styles.divider}></View>
-                    <ScrollView style={styles.container}>
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.navigate('ProfileScreen')}
+                        style={{ position: 'absolute', right: 10, top: 20 }}>
+                        <Text style={{ color: 'black' }}>Save</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.divider}></View>
+                <ScrollView style={styles.container}>
                     <View style={styles.mainContainer}>
                         <View style={{
                             justifyContent: 'center',
@@ -78,7 +78,7 @@ export default class ProfileEdit extends React.Component {
                                 blurOnSubmit={false}
                             />
                             <Text style={styles.description}>
-                                Your public profile shows your first name. When you request a bookin, your lender will see your first and last name. 
+                                Your public profile shows your first name. When you request a bookin, your lender will see your first and last name.
                             </Text>
                             <Text style={styles.text}>I am</Text>
                             <RNPickerSelect
@@ -306,7 +306,7 @@ export default class ProfileEdit extends React.Component {
                             blurOnSubmit={false}
                         />
                         <Text style={styles.description}>
-                            Your public profile shows a general locaion. When you request a bookin, your lender will see your locaion. 
+                            Your public profile shows a general locaion. When you request a bookin, your lender will see your locaion.
                         </Text>
                         <Text style={styles.text}>Describe yourself</Text>
                         <TextInput
@@ -316,17 +316,17 @@ export default class ProfileEdit extends React.Component {
                             blurOnSubmit={false}
                             numberOfLines={10}
                             multiline={true}
-                            
+
                         />
                         <Text style={styles.description}>
-                            ToolShare is built on relationships. Help peopel get you know you, tell them a little bit about yourself. 
+                            ToolShare is built on relationships. Help peopel get you know you, tell them a little bit about yourself.
                         </Text>
                         <Text style={styles.description}>
-                            Tell them what your interest with tools/equipment are? Share your hobbies, interests, current projects or repairs. 
+                            Tell them what your interest with tools/equipment are? Share your hobbies, interests, current projects or repairs.
                         </Text>
                         <Text style={styles.text}></Text>
                     </View>
-                    </ScrollView>
+                </ScrollView>
                 <TabBar props={this.props} />
             </View>
         )

@@ -53,14 +53,14 @@ class EquipmentLocation extends React.Component {
                     paddingVertical: 12,
                 }}>
                     <TouchableOpacity
-                        style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                        style={{ marginTop: 15, marginLeft: 0, position: 'absolute', zIndex: 10 }}
                         onPress={() => this.props.navigation.navigate('EquipmentDetailScreen')}>
-                        <AntDesign name="close" size={26} color={DEFAULT_COLOR} />
+                        <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                     </TouchableOpacity>
                 </View>
                 <View style={{
                     flexDirection: 'row',
-                    marginTop: 20,
+                    marginTop: 25,
                     marginHorizontal: 10,
                     alignItems: 'center',
                 }}>

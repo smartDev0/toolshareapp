@@ -20,8 +20,8 @@ import EquipmentDetail from './screens/equipment/EquipmentDetail';
 import EquipmentLocation from './screens/equipment/EquipmentLocation';
 import EquipmentPhoto from './screens/equipment/EquipmentPhoto';
 import EquipmentRequirement from './screens/equipment/EquipmentRequirement';
-
-
+import EquipmentReview from './screens/equipment/EquipmentReview';
+import EquipmentListing from './screens/equipment/EquipmentListing';
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
 
@@ -94,6 +94,12 @@ const NavigatorRoutes = createStackNavigator(
                 headerShown: false,
             },
         },
+        EquipmentlistingScreen: {
+            screen: EquipmentListing,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
         EquipmentDetailScreen: {
             screen: EquipmentDetail,
             navigationOptions: {
@@ -114,6 +120,12 @@ const NavigatorRoutes = createStackNavigator(
         },
         EquipmentRequirementScreen: {
             screen: EquipmentRequirement,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        EquipmentReviewScreen: {
+            screen: EquipmentReview,
             navigationOptions: {
                 headerShown: false,
             },
