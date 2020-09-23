@@ -8,6 +8,7 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import HomeScreen from './screens/home/HomeScreen';
 import Search from './screens/search/Search';
 import ToolShare from './screens/toolShare/ToolShare';
+import ToolBox from './screens/toolBox/ToolBox'
 import ListingTool from './screens/listingTool/ListingTool';
 import ListingToolSlider from './screens/listingTool/ListingToolSlider';
 import Profile from './screens/profile/Profile';
@@ -42,6 +43,12 @@ const NavigatorRoutes = createStackNavigator(
         },
         ToolShareScreen: {
             screen: ToolShare,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        ToolBoxScreen: {
+            screen: ToolBox,
             navigationOptions: {
                 headerShown: false,
             },

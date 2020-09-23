@@ -52,7 +52,7 @@ const TabBar = ({props}) => {
           </Text>
         </View>
       </TouchableHighlight>
-      <TouchableHighlight>
+      <TouchableHighlight onPress={() => props.navigation.navigate('ToolBoxScreen')}>
         <View style={styles.tabBarSectionImageStyle}>
           <FontAwesome name="briefcase" style={{ textAlign: 'center' }} size={21} color="grey" />
           <Text style={{ fontSize: 10 }}>

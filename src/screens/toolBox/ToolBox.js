@@ -4,12 +4,12 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { TouchableOpacity, StyleSheet, View, Text, SafeAreaView, Image  } from 'react-native';
+import { TouchableOpacity, StyleSheet, View, Text, SafeAreaView, Image } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
-import Renting from './components/Renting';
-import Lending from './components/Lending';
-
 import TabBar from './../../components/TabBar';
+import Tool from './components/Tool';
+import Reservation from './components/Reservation'
+
 const Stack = createStackNavigator();
 const Tab = createMaterialTopTabNavigator();
 
@@ -21,7 +21,7 @@ const NavigationDrawerStructure = (navigation) => {
 
     return (
         <View style={{ flexDirection: 'row' }}>
-            <TouchableOpacity 
+            <TouchableOpacity
                 onPress={goHome}>
                 <Feather name="chevron-left" size={30} color="#6EA0BE" />
             </TouchableOpacity>
@@ -40,7 +40,7 @@ const TabStack = (privatNavigation) => {
                 },
                 labelStyle: {
                     textAlign: 'center',
-                    fontSize:12
+                    fontSize: 10
                 },
                 indicatorStyle: {
                     borderBottomColor: '#6EA0BE',
@@ -48,44 +48,50 @@ const TabStack = (privatNavigation) => {
                 },
             }}>
             <Tab.Screen
-                name="Renting"
-                component={Renting}
+                name="Reservation"
+                component={Reservation}
                 options={{
-                    tabBarLabel: 'Renting on ToolShare',
+                    tabBarLabel: 'Reservation',
                 }} />
             <Tab.Screen
-                name="Lending"
-                // component={() => <Lending screenProps={privatNavigation} />}
-                component={({ navigation }) => <Lending navigation={navigation} privatNavigation={privatNavigation} number={1} />}
+                name="Tool"
+                component={Tool} 
                 options={{
-                    tabBarLabel: 'Lending on ToolShare',
+                    tabBarLabel: 'Tools',
+                }} />
+            <Tab.Screen
+                name="Request"
+                component={Tool}
+                options={{
+                    tabBarLabel: 'Requests',
+                }} />
+            <Tab.Screen
+                name="Earning"
+                component={Tool}
+                options={{
+                    tabBarLabel: 'Earnings',
                 }} />
         </Tab.Navigator>
     );
 }
 
-function ToolShare(navigation) {
+function ToolBox(navigation) {
     return (
         <>
             <NavigationContainer>
                 <Stack.Navigator
-                    initialRouteName="Renting"
-                    screenOptions={{
-                        headerLeft: () => <NavigationDrawerStructure navigationProps={navigation.navigation} />,
-                        headerStyle: { backgroundColor: 'white' },
-                        headerTintColor: 'black',
-                        headerTitleStyle: { fontWeight: '100' }
-                    }}>
+                    initialRouteName="Reservation"
+                    >
                     <Stack.Screen
                         name="TabStack"
                         component={() => TabStack(navigation)}
-                        options={{ title: 'How ToolShare Works' }} />
+                        options={{ title: 'Toolbox' }} />
                 </Stack.Navigator>
             </NavigationContainer>
-            <TabBar props={navigation}/>
+            <TabBar props={navigation} />
         </>
-            
+
     );
 }
 
-export default ToolShare;
+export default ToolBox;
