@@ -17,6 +17,7 @@ import Setting from './screens/setting/Setting';
 import Help from './screens/help/Help';
 import Feedback from './screens/feedback/Feedback';
 import EquipmentDetail from './screens/equipment/EquipmentDetail';
+import EquipmentLocation from './screens/equipment/EquipmentLocation';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -92,6 +93,12 @@ const NavigatorRoutes = createStackNavigator(
         },
         EquipmentDetailScreen: {
             screen: EquipmentDetail,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        EquipmentLocationScreen: {
+            screen: EquipmentLocation,
             navigationOptions: {
                 headerShown: false,
             },

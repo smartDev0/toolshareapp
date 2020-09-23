@@ -5,13 +5,7 @@ import {
     View,
     Text,
     ScrollView,
-    Image,
-    Keyboard,
     TouchableOpacity,
-    KeyboardAvoidingView,
-    Platform,
-    Button,
-    ImageBackground,
     CheckBox,
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
@@ -33,7 +27,7 @@ class EquipmentDetail extends React.Component {
     }
     componentDidMount() {
     }
-    render() { 
+    render() {
         return (
             <View style={{ flex: 1 }}>
                 <View style={{
@@ -209,18 +203,25 @@ class EquipmentDetail extends React.Component {
                                 />
                                 <Text style={styles.label}>I understant that itis my responsibility to inform my personal insuer about my participation ion ToolShare.</Text>
                             </View>
-                            <View>
-                                <TouchableOpacity
-                                    style={styles.button}
-                                    activeOpacity={0.7}
-                                    onPress={() => this.props.navigation.navigate('HomeScreen')}
-                                >
-                                    <Text style={styles.buttonText}>NEXT</Text>
-                                </TouchableOpacity>
-                            </View>
+
                         </View>
                     </View>
                 </ScrollView>
+
+                <View style={{
+                    marginVertical: 10,
+                    marginHorizontal: 10
+                }}
+                >
+                    <TouchableOpacity
+                        style={styles.button}
+                        activeOpacity={0.7}
+                        onPress={() => this.props.navigation.navigate('EquipmentLocationScreen')}
+                    >
+                        <Text style={styles.buttonText}>NEXT</Text>
+                    </TouchableOpacity>
+                </View>
+
             </View>
 
         )
@@ -266,15 +267,17 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: DEFAULT_COLOR,
-        display: 'flex',
         justifyContent: 'center',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        marginVertical: 10,
-        padding:6
+        padding: 6
     },
     buttonText: {
-        color:'white'
+        color: 'white'
+    },
+    bottom: {
+        flex: 1,
+        justifyContent: 'flex-end',
     },
     box: {
         width: 20,
@@ -283,7 +286,7 @@ const styles = StyleSheet.create({
         color: 'white',
         justifyContent: 'center',
         textAlign: 'center',
-        fontSize:16
+        fontSize: 16
     },
     checkboxContainer: {
         flexDirection: "row",
@@ -291,7 +294,7 @@ const styles = StyleSheet.create({
 
     },
     title: {
-        fontSize:20
+        fontSize: 20
     },
     checkbox: {
         alignSelf: "center",
@@ -353,6 +356,6 @@ const styles = StyleSheet.create({
         fontSize: 10,
         width: '100%',
         flexWrap: 'wrap',
-        flex:1
+        flex: 1
     },
 });

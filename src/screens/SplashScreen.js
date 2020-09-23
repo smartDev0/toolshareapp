@@ -15,7 +15,6 @@ class SplashScreen extends React.Component {
     }
 
     componentDidMount = () => {
-        console.log(this.props)
         let timer = setInterval(() => {
             let icount = this.state.count + 0.25;
             this.setState({ count: icount });
