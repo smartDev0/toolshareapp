@@ -34,6 +34,7 @@ import Congratulation from './screens/order/Congratulation';
 import LenderProfile from './screens/profile/LenderProfile';
 import Rental from './screens/tool/Rental';
 import UploadEquipment from './screens/equipment/UploadEquipment';
+import Inbox from './screens/inbox/Inbox';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -211,6 +212,12 @@ const NavigatorRoutes = createStackNavigator(
         },
         UploadEquipmentScreen: {
             screen: UploadEquipment,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        InboxScreen: {
+            screen: Inbox,
             navigationOptions: {
                 headerShown: false,
             },

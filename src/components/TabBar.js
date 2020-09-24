@@ -35,7 +35,8 @@ const TabBar = ({props}) => {
               </Text>
           </View>
       </TouchableHighlight>
-      <TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => props.navigation.navigate('InboxScreen')}>
         <View style={styles.tabBarSectionImageStyle}>
           <Fontisto name="email" style={{ textAlign: 'center' }} size={20} color="grey" />
           <Text style={{ fontSize: 10 }}>
