@@ -24,6 +24,8 @@ import EquipmentRequirement from './screens/equipment/EquipmentRequirement';
 import EquipmentReview from './screens/equipment/EquipmentReview';
 import EquipmentListing from './screens/equipment/EquipmentListing';
 import PaymentTransfer from './screens/payment/PaymentTransfer';
+import ToolProfile from './screens/tool/ToolProfile';
+import RequestBook from './screens/order/RequestBook';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -145,6 +147,18 @@ const NavigatorRoutes = createStackNavigator(
                 headerShown: false,
             },
         },
+        ToolProfileScreen: {
+            screen: ToolProfile,
+            navigationOptions: {
+                headerShown: false,
+            },
+        }, 
+        RequestBookScreen: {
+            screen: RequestBook,
+            navigationOptions: {
+                headerShown: false,
+            },
+        }, 
     }
     
 );

@@ -48,7 +48,7 @@ class SearchScreen extends Component {
                 <ScrollView>
                     <View style={styles.categorySectionsStyle}>
                         <TouchableOpacity activeOpacity={0.5}
-                            onPress={() => this.props.navigation.navigate('ToolShareScreen')}>
+                            onPress={() => this.props.navigation.navigate('ToolProfileScreen')}>
                             <View style={{
                                 width: '100%',
                                 marginBottom:10
@@ -66,7 +66,7 @@ class SearchScreen extends Component {
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.5}
-                            onPress={() => this.props.navigation.navigate('ToolShareScreen')}>
+                            onPress={() => this.props.navigation.navigate('ToolProfileScreen')}>
                             <View style={{
                                 width: '100%',
                                 marginBottom: 10
@@ -84,7 +84,7 @@ class SearchScreen extends Component {
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.5}
-                            onPress={() => this.props.navigation.navigate('ToolShareScreen')}>
+                            onPress={() => this.props.navigation.navigate('ToolProfileScreen')}>
                             <View style={{
                                 width: '100%',
                                 marginBottom: 10
@@ -102,7 +102,7 @@ class SearchScreen extends Component {
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.5}
-                            onPress={() => this.props.navigation.navigate('ToolShareScreen')}>
+                            onPress={() => this.props.navigation.navigate('ToolProfileScreen')}>
                             <View style={{
                                 width: '100%',
                                 marginBottom: 10
@@ -120,7 +120,7 @@ class SearchScreen extends Component {
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.5}
-                            onPress={() => this.props.navigation.navigate('ToolShareScreen')}>
+                            onPress={() => this.props.navigation.navigate('ToolProfileScreen')}>
                             <View style={{
                                 width: '100%',
                                 marginBottom: 10
