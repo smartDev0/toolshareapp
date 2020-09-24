@@ -14,7 +14,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
 
-class RequestStepTwo extends React.Component {
+class Order extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,7 +33,7 @@ class RequestStepTwo extends React.Component {
                     }}>
                         <TouchableOpacity
                             style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
-                            onPress={() => this.props.navigation.navigate('ToolProfileScreen')}>
+                            onPress={() => this.props.navigation.navigate('PaymentScreen')}>
                             <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
                     </View>
@@ -41,8 +41,7 @@ class RequestStepTwo extends React.Component {
                         marginTop: 30,
                         marginHorizontal: 10,
                     }}>
-                        <Text style={styles.text}>Step 2 of 2</Text>
-                        <Text style={styles.title}>Review and pay</Text>
+                        <Text style={styles.title}>Confirm Order</Text>
                         <View style={styles.divider} />
                     </View>
                     <ScrollView style={styles.container}>
@@ -71,27 +70,23 @@ class RequestStepTwo extends React.Component {
                             <View style={styles.divider} />
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.navigate('PaymentScreen')}>
-                            <View style={{
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
+                                <View style={{
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
                                 }}>
                                     <View style={{
-                                        width: 50,
-                                        height:30,
+                                        width: 30,
+                                        height: 20,
                                         borderColor: DEFAULT_COLOR,
-                                        borderWidth: 0.8,
-                                        justifyContent: 'center',
-                                        alignItems:'center'
-                                }}>
-                                    <Feather name="plus" size={20} color={DEFAULT_COLOR} />
-                                </View>
-                                <Text style={styles.text}>Add payment</Text>
-                                    <View style={{
-                                        justifyContent: 'center', alignItems: 'center'
                                     }}>
-                                        <Feather name="chevron-right" size={26} color={DEFAULT_COLOR} />
+                                        <Image
+                                            style={{
+                                                width:'100%', height:'100%'
+                                            }}
+                                            source={require("./../../../assets/images/visa.png")}
+                                        />
                                     </View>
+                                    <Text style={styles.text}> Card **** **** **** 4381</Text>
                                 </View>
                             </TouchableOpacity>
                             <View style={styles.divider} />
@@ -138,20 +133,20 @@ class RequestStepTwo extends React.Component {
                                     $44.85
                                 </Text>
                             </View>
-                            <View style={styles.divider}/>
+                            <View style={styles.divider} />
                             <View>
                                 <Text style={styles.text}>Cancelation Policy</Text>
                                 <Text style={styles.policyText}>
-                                    Cancel within 48 hours of booking and 14 days before checki-in to get full refund. Cancel up to & days begore check-in and get 50% refund (minus servie fees). Cancel within 7 days of rental and the reservation is non-refundable. 
+                                    Cancel within 48 hours of booking and 14 days before checki-in to get full refund. Cancel up to & days begore check-in and get 50% refund (minus servie fees). Cancel within 7 days of rental and the reservation is non-refundable.
                                 </Text>
                             </View>
                             <View style={styles.divider} />
                             <View>
                                 <Text style={styles.policyText}>
-                                    I agree to the 
+                                    I agree to the
                                     <Text style={styles.activeText}> Equipment Rules, Cancelation Policy,</Text>
-                                    and the  <Text style={styles.activeText}> Refund Policy.</Text> 
-                                    I also agree to pay the total amount shown, which includes Service Fees.    
+                                    and the  <Text style={styles.activeText}> Refund Policy.</Text>
+                                    I also agree to pay the total amount shown, which includes Service Fees.
                                 </Text>
                             </View>
                         </View>
@@ -169,9 +164,9 @@ class RequestStepTwo extends React.Component {
                         <TouchableOpacity
                             style={styles.button}
                             activeOpacity={0.7}
-                            onPress={() => this.props.navigation.navigate('PaymentScreen')}
+                            onPress={() => this.props.navigation.navigate('CongratulationScreen')}
                         >
-                            <Text style={styles.buttonText}>ADD PAYMENT</Text>
+                            <Text style={styles.buttonText}>CONFIRM</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -181,7 +176,7 @@ class RequestStepTwo extends React.Component {
         )
     }
 }
-export default RequestStepTwo;
+export default Order;
 
 const styles = StyleSheet.create({
     contactSectionStyle: {
@@ -255,7 +250,7 @@ const styles = StyleSheet.create({
         marginVertical: 5
     },
     policyText: {
-        fontSize:12
+        fontSize: 12
     },
 
     activeText: {
