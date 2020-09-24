@@ -26,6 +26,8 @@ import EquipmentListing from './screens/equipment/EquipmentListing';
 import PaymentTransfer from './screens/payment/PaymentTransfer';
 import ToolProfile from './screens/tool/ToolProfile';
 import RequestBook from './screens/order/RequestBook';
+import RequestStepOne from './screens/order/RequestStepOne';
+import RequestStepTwo from './screens/order/RequestStepTwo';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -155,6 +157,18 @@ const NavigatorRoutes = createStackNavigator(
         }, 
         RequestBookScreen: {
             screen: RequestBook,
+            navigationOptions: {
+                headerShown: false,
+            },
+        }, 
+        RequestStepOneScreen: {
+            screen: RequestStepOne,
+            navigationOptions: {
+                headerShown: false,
+            },
+        }, 
+        RequestStepTwoScreen: {
+            screen: RequestStepTwo,
             navigationOptions: {
                 headerShown: false,
             },

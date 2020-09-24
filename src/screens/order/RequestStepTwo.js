@@ -14,7 +14,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
 
-class RequestBook extends React.Component {
+class RequestStepTwo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,7 +25,6 @@ class RequestBook extends React.Component {
     render() {
         return (
             <>
-
                 <View style={{ flex: 1 }}>
                     <View style={{
                         flexDirection: 'row',
@@ -39,24 +38,29 @@ class RequestBook extends React.Component {
                         </TouchableOpacity>
                     </View>
                     <View style={{
-                        flexDirection: 'row',
-                        marginTop: 40,
+                        marginTop: 30,
                         marginHorizontal: 10,
-                        alignItems: 'center',
                     }}>
+                        <Text style={styles.text}>Step 2 of 2</Text>
+                        <Text style={styles.title}>Review and pay</Text>
+                        <View style={styles.divider} />
                     </View>
                     <ScrollView style={styles.container}>
-                        
                         <View style={styles.mainContainer}>
                             <View style={{
                                 flexDirection: 'row',
                                 justifyContent: 'space-between',
-                                alignItems:'center'
+                                alignItems: 'center'
                             }}>
-                                <Text style={styles.text}>
-                                    Milwaukee M18 1/2“ {'\n'}{'\n'}
-                                    $13 / day
+                                <View>
+                                    <Text style={styles.text}>
+                                        Milwaukee M18 1/2“ {'\n'}
+                                    Compact Drill
                                 </Text>
+                                    <Text style={styles.text}>
+                                        Dec 6~9, 3 days
+                                </Text>
+                                </View>
                                 <View style={{ height: 60, width: 100, }}>
                                     <Image
                                         style={styles.imageStyle}
@@ -65,39 +69,31 @@ class RequestBook extends React.Component {
                                 </View>
                             </View>
                             <View style={styles.divider} />
-                            <View
-                                style={{
-                                    flexDirection: 'row',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center'
+                            <TouchableOpacity
+                                onPress={() => this.props.privatNavigation.navigation.navigate('PaymentTransferScreen')}>
+                            <View style={{
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
                                 }}>
-                                <Text style={styles.textDescription}>
-                                    Start Date{'\n'}
-                                    Decmeber 6
-                                </Text>
-                                <Text style={styles.textDescription}>
-                                    End Date{'\n'}
-                                    Decmeber 9
-                                </Text>
-                                <Text style={styles.textDescription}>
-                                    Duration{'\n'}
-                                   3 Days
-                                </Text>
-                            </View>
-
-                           
-                            <View style={styles.divider} />
-                            <View>
-                                <Text style={styles.text}>Metting Availability</Text>
-                            </View>
-                            <Text style={styles.textDescription}>
-                                9am                    9pm
-                            </Text>
-                            <View style={styles.divider} />
-                            <View>
-                                <Text style={styles.text}>Metting Point</Text>
-                            </View>
-                            <View style={{ width: '100%', height: 200 }}></View>
+                                    <View style={{
+                                        width: 50,
+                                        height:30,
+                                        borderColor: DEFAULT_COLOR,
+                                        borderWidth: 0.8,
+                                        justifyContent: 'center',
+                                        alignItems:'center'
+                                }}>
+                                    <Feather name="plus" size={20} color={DEFAULT_COLOR} />
+                                </View>
+                                <Text style={styles.text}>Add payment</Text>
+                                    <View style={{
+                                        justifyContent: 'center', alignItems: 'center'
+                                    }}>
+                                        <Feather name="chevron-right" size={26} color={DEFAULT_COLOR} />
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
                             <View style={styles.divider} />
                             <View>
                                 <Text style={styles.text}>FEES & TAX DETAILS</Text>
@@ -122,7 +118,7 @@ class RequestBook extends React.Component {
                                     alignItems: 'center'
                                 }}>
                                 <Text style={styles.textDescription}>
-                                   Service fee
+                                    Service fee
                                 </Text>
                                 <Text style={styles.textDescription}>
                                     $5.85
@@ -134,13 +130,28 @@ class RequestBook extends React.Component {
                                     flexDirection: 'row',
                                     justifyContent: 'space-between',
                                     alignItems: 'center',
-                                    marginBottom:10
                                 }}>
-                                <Text style={styles.textDescription}>
+                                <Text style={styles.text}>
                                     Total
                                 </Text>
                                 <Text style={styles.textDescription}>
                                     $44.85
+                                </Text>
+                            </View>
+                            <View style={styles.divider}/>
+                            <View>
+                                <Text style={styles.text}>Cancelation Policy</Text>
+                                <Text style={styles.policyText}>
+                                    Cancel within 48 hours of booking and 14 days before checki-in to get full refund. Cancel up to & days begore check-in and get 50% refund (minus servie fees). Cancel within 7 days of rental and the reservation is non-refundable. 
+                                </Text>
+                            </View>
+                            <View style={styles.divider} />
+                            <View>
+                                <Text style={styles.policyText}>
+                                    I agree to the 
+                                    <Text style={styles.activeText}> Equipment Rules, Cancelation Policy,</Text>
+                                    and the  <Text style={styles.activeText}> Refund Policy.</Text> 
+                                    I also agree to pay the total amount shown, which includes Service Fees.    
                                 </Text>
                             </View>
                         </View>
@@ -160,7 +171,7 @@ class RequestBook extends React.Component {
                             activeOpacity={0.7}
                             onPress={() => this.props.navigation.navigate('RequestStepOneScreen')}
                         >
-                            <Text style={styles.buttonText}>REQUEST TO BOOK</Text>
+                            <Text style={styles.buttonText}>ADD PAYMENT</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -170,7 +181,7 @@ class RequestBook extends React.Component {
         )
     }
 }
-export default RequestBook;
+export default RequestStepTwo;
 
 const styles = StyleSheet.create({
     contactSectionStyle: {
@@ -188,12 +199,12 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         padding: 6,
         paddingHorizontal: 15,
-        width:'100%'
+        width: '100%'
     },
     divider: {
         borderBottomColor: DEFAULT_COLOR,
         borderWidth: 0.5,
-        marginVertical:10
+        marginVertical: 10
     },
     buttonText: {
         color: 'white'
@@ -243,21 +254,12 @@ const styles = StyleSheet.create({
     item: {
         marginVertical: 5
     },
-    profileText: {
-        position: 'absolute',
-        left: 70,
-        marginTop: 10,
-        color: 'white'
+    policyText: {
+        fontSize:12
     },
-    profileTitle: {
-        textAlign: 'center',
-        marginTop: 8,
-    },
+
     activeText: {
         color: DEFAULT_COLOR,
-        fontSize: 14,
-        textAlign: 'center',
-        marginVertical: 10
     },
     textTnput: {
         marginVertical: 5,

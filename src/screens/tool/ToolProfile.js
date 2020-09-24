@@ -157,12 +157,8 @@ class ToolProfile extends React.Component {
                             CHECK AVAILABILITY
                             </Text>
                         </TouchableOpacity>)}
-                        
                     </View>
-
                 </View>
-                
-
             </>
         )
     }
