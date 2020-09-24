@@ -37,6 +37,7 @@
     "react-native-svg": "^12.1.0",
     "react-native-tab-view": "^2.15.1",
     "react-native-vector-icons": "^7.1.0",
+    "react-native-walkthrough-tooltip": "^1.1.11",
     "react-navigation-stack": "^2.5.1",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",

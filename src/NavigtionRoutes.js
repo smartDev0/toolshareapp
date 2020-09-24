@@ -23,6 +23,8 @@ import EquipmentPhoto from './screens/equipment/EquipmentPhoto';
 import EquipmentRequirement from './screens/equipment/EquipmentRequirement';
 import EquipmentReview from './screens/equipment/EquipmentReview';
 import EquipmentListing from './screens/equipment/EquipmentListing';
+import PaymentTransfer from './screens/payment/PaymentTransfer';
+
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
 
@@ -133,6 +135,12 @@ const NavigatorRoutes = createStackNavigator(
         },
         EquipmentReviewScreen: {
             screen: EquipmentReview,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        PaymentTransferScreen: {
+            screen: PaymentTransfer,
             navigationOptions: {
                 headerShown: false,
             },

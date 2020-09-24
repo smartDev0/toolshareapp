@@ -68,7 +68,7 @@ const TabStack = (privatNavigation) => {
                 }} />
             <Tab.Screen
                 name="Earning"
-                component={Earning}
+                component={({ navigation }) => <Earning navigation={navigation} privatNavigation={privatNavigation} number={1} />}
                 options={{
                     tabBarLabel: 'Earnings',
                 }} />

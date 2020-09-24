@@ -115,7 +115,7 @@ class Earning extends React.Component {
                                 justifyContent: 'center', alignItems: 'center'
                             }}>
                                 <TouchableOpacity
-                                    onPress={() => this.props.navigation.navigate('EquipmentDetailScreen')}>
+                                    onPress={() => this.props.privatNavigation.navigation.navigate('PaymentTransferScreen')}>
                                     <Feather name="chevron-right" size={26} color={DEFAULT_COLOR} />
                                 </TouchableOpacity>
 
