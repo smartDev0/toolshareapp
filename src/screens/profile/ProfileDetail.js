@@ -102,7 +102,6 @@ export default class ProfileDetail extends React.Component {
                                 >
                                     <Image source={require('./../../../assets/images/marker.png')}></Image>
                                 </Marker>
-
                             </MapView>
                         </View>
                         <View>

@@ -16,7 +16,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
-
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 class Congratulation extends React.Component {
     constructor(props) {
         super(props);
@@ -61,9 +61,14 @@ class Congratulation extends React.Component {
                                 </TouchableOpacity>
                                
                             </View>
-                            <View style={styles.toolBox}>
-                                <Entypo name="user" style={{ textAlign: 'center' }} size={16} color="grey" />
-                            </View>
+                            <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('LenderProfileScreen')}>
+                                <View style={styles.toolBox}>
+
+                                    <Entypo name="user" style={{ textAlign: 'center' }} size={16} color="grey" />
+                                </View>
+                            </TouchableOpacity>
+                            
                         </View>
                         <View style={styles.divider} />
                     </View>
@@ -111,7 +116,30 @@ class Congratulation extends React.Component {
                             <View>
                                 <Text style={styles.text}>Metting Point</Text>
                             </View>
-                            <View style={{ width: '100%', height: 200 }}></View>
+                            <View style={{ height: 180, width: '100%' }}>
+                                <MapView
+                                    style={styles.map}
+                                    provider={PROVIDER_GOOGLE}
+                                    region={{
+                                        latitude: 37.78825,
+                                        longitude: -122.4324,
+                                        latitudeDelta: 0.0922,
+                                        longitudeDelta: 0.0421,
+                                    }}
+                                >
+                                    <Marker
+                                        coordinate={{
+                                            latitude: 37.78825,
+                                            longitude: -122.4324,
+                                        }}
+                                        onDragEnd={(e) => alert(JSON.stringify(e.nativeEvent.coordinate))}
+                                        title={'Meeting Location'}
+                                        description={'Exact location will be provided after booking .'}
+                                    >
+                                        <Image source={require('./../../../assets/images/ToolMarker.png')}></Image>
+                                    </Marker>
+                                </MapView>
+                            </View>
                             <View style={styles.divider} />
                             <View>
                                 <Text style={styles.text}>Equipment Rules</Text>
@@ -173,6 +201,10 @@ const styles = StyleSheet.create({
     headerBackground: {
         backgroundColor: DEFAULT_COLOR,
         height: 150
+    },
+    map: {
+        width: "100%",
+        height: '100%',
     },
     button: {
         backgroundColor: DEFAULT_COLOR,

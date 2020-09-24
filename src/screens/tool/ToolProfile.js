@@ -17,6 +17,7 @@ import TabBar from './../../components/TabBar';
 import DateRangePicker from 'react-native-date-ranges';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 class ToolProfile extends React.Component {
     constructor(props) {
         super(props);
@@ -113,7 +114,30 @@ class ToolProfile extends React.Component {
                                 <Text style={styles.text}>Metting Point</Text>
                             </View>
                             <View style={styles.divider} />
-                            <View style={{ width: '100%', height: 200 }}></View>
+                            <View style={{ height: 180, width: '100%' }}>
+                                <MapView
+                                    style={styles.map}
+                                    provider={PROVIDER_GOOGLE}
+                                    region={{
+                                        latitude: 37.78825,
+                                        longitude: -122.4324,
+                                        latitudeDelta: 0.0922,
+                                        longitudeDelta: 0.0421,
+                                    }}
+                                >
+                                    <Marker
+                                        coordinate={{
+                                            latitude: 37.78825,
+                                            longitude: -122.4324,
+                                        }}
+                                        onDragEnd={(e) => alert(JSON.stringify(e.nativeEvent.coordinate))}
+                                        title={'Meeting Location'}
+                                        description={'Exact location will be provided after booking .'}
+                                    >
+                                        <Image source={require('./../../../assets/images/ToolMarker.png')}></Image>
+                                    </Marker>
+                                </MapView>
+                            </View>
                             <View style={styles.divider} />
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems:'center' }}>
                                 <View style={{flex:0.96}}>
@@ -176,6 +200,10 @@ const styles = StyleSheet.create({
     headerBackground: {
         backgroundColor: DEFAULT_COLOR,
         height: 150
+    },
+    map: {
+        width: "100%",
+        height: '100%',
     },
     button: {
         backgroundColor: DEFAULT_COLOR,

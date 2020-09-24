@@ -13,7 +13,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
-
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 class EquipmentReview extends React.Component {
     constructor(props) {
         super(props);
@@ -130,7 +130,30 @@ class EquipmentReview extends React.Component {
                                         <Text style={styles.text}>Metting Point</Text>
                                     </View>
                                     <View style={styles.divider} />
-                                    <View style={{ width: '100%', height: 200 }}></View>
+                                    <View style={{ height: 180, width: '100%' }}>
+                                        <MapView
+                                            style={styles.map}
+                                            provider={PROVIDER_GOOGLE}
+                                            region={{
+                                                latitude: 37.78825,
+                                                longitude: -122.4324,
+                                                latitudeDelta: 0.0922,
+                                                longitudeDelta: 0.0421,
+                                            }}
+                                        >
+                                            <Marker
+                                                coordinate={{
+                                                    latitude: 37.78825,
+                                                    longitude: -122.4324,
+                                                }}
+                                                onDragEnd={(e) => alert(JSON.stringify(e.nativeEvent.coordinate))}
+                                                title={'Meeting Location'}
+                                                description={'Exact location will be provided after booking .'}
+                                            >
+                                                <Image source={require('./../../../assets/images/ToolMarker.png')}></Image>
+                                            </Marker>
+                                        </MapView>
+                                    </View>
                                 </View>
                             </ScrollView>
                             <View style={{
@@ -163,6 +186,10 @@ const styles = StyleSheet.create({
     headerBackground: {
         backgroundColor: DEFAULT_COLOR,
         height: 150
+    },
+    map: {
+        width: "100%",
+        height: '100%',
     },
     button: {
         backgroundColor: DEFAULT_COLOR,

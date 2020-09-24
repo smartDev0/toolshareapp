@@ -16,7 +16,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
-
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 class Rental extends React.Component {
     constructor(props) {
         super(props);
@@ -60,9 +60,13 @@ class Rental extends React.Component {
                                     <Fontisto name="email" style={{ textAlign: 'center' }} size={16} color="grey" />
                                 </View>
                             </TouchableOpacity>
-                            <View style={styles.toolBox}>
-                                <Entypo name="user" style={{ textAlign: 'center' }} size={16} color="grey" />
-                            </View>
+                             <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('LenderProfileScreen')}>
+                                <View style={styles.toolBox}>
+                                    <Entypo name="user" style={{ textAlign: 'center' }} size={16} color="grey" />
+                                </View>
+                            </TouchableOpacity>
+                           
                         </View>
                         <View style={styles.divider} />
                     </View>
@@ -108,7 +112,30 @@ class Rental extends React.Component {
                             <View>
                                 <Text style={styles.text}>Metting Point</Text>
                             </View>
-                            <View style={{ width: '100%', height: 200 }}></View>
+                            <View style={{ height: 180, width: '100%' }}>
+                                <MapView
+                                    style={styles.map}
+                                    provider={PROVIDER_GOOGLE}
+                                    region={{
+                                        latitude: 37.78825,
+                                        longitude: -122.4324,
+                                        latitudeDelta: 0.0922,
+                                        longitudeDelta: 0.0421,
+                                    }}
+                                >
+                                    <Marker
+                                        coordinate={{
+                                            latitude: 37.78825,
+                                            longitude: -122.4324,
+                                        }}
+                                        onDragEnd={(e) => alert(JSON.stringify(e.nativeEvent.coordinate))}
+                                        title={'Meeting Location'}
+                                        description={'Exact location will be provided after booking .'}
+                                    >
+                                        <Image source={require('./../../../assets/images/ToolMarker.png')}></Image>
+                                    </Marker>
+                                </MapView>
+                            </View>
                             <View style={styles.divider} />
                             <View>
                                 <Text style={styles.text}>Equipment Rules</Text>
@@ -212,6 +239,10 @@ const styles = StyleSheet.create({
     contactSectionStyle: {
         flexDirection: 'row',
         alignItems: 'center',
+    },
+    map: {
+        width: "100%",
+        height: '100%',
     },
     headerBackground: {
         backgroundColor: DEFAULT_COLOR,
