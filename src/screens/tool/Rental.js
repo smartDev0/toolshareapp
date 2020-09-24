@@ -48,19 +48,18 @@ class Rental extends React.Component {
                             flexDirection: 'row',
                             justifyContent: 'flex-end'
                         }}>
-                            <View style={styles.activeToolBox}>
-                                <TouchableOpacity
-                                    onPress={() => this.props.navigation.navigate('CongratulationScreen')}>
+                            <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('CongratulationScreen')}>
+                                <View style={styles.activeToolBox}>
                                     <FontAwesome name="briefcase" style={{ textAlign: 'center' }} size={16} color="grey" />
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.toolBox}>
-                                <TouchableOpacity
-                                    onPress={() => this.props.navigation.navigate('LenderProfileScreen')}>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('InboxScreen')}>
+                                <View style={styles.toolBox}>
                                     <Fontisto name="email" style={{ textAlign: 'center' }} size={16} color="grey" />
-                                </TouchableOpacity>
-
-                            </View>
+                                </View>
+                            </TouchableOpacity>
                             <View style={styles.toolBox}>
                                 <Entypo name="user" style={{ textAlign: 'center' }} size={16} color="grey" />
                             </View>
@@ -131,7 +130,7 @@ class Rental extends React.Component {
                                 <View>
                                     <Text style={styles.text}> Equipment at exchange</Text>
                                 </View>
-                                <View style={{ flexDirection: 'row'}}>
+                                <View style={{ flexDirection: 'row' }}>
                                     <View style={{
                                         width: 50,
                                         height: 30,
@@ -150,10 +149,10 @@ class Rental extends React.Component {
                                         borderWidth: 0.8,
                                         justifyContent: 'center',
                                         alignItems: 'center',
-                                        marginHorizontal:5
+                                        marginHorizontal: 5
                                     }}>
                                         <Image
-                                            style={{width:'100%', height:'100%'}}
+                                            style={{ width: '100%', height: '100%' }}
                                             source={require("./../../../assets/images/3.png")}
                                         />
                                     </View>
@@ -164,7 +163,7 @@ class Rental extends React.Component {
                                             onPress={() => this.props.navigation.navigate('UploadEquipmentScreen')}>
                                             <Feather name="chevron-right" size={26} color={DEFAULT_COLOR} />
                                         </TouchableOpacity>
-                                       
+
                                     </View>
                                 </View>
 

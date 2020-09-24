@@ -25,7 +25,7 @@ const TabStack = (privatNavigation) => {
                 },
                 labelStyle: {
                     textAlign: 'center',
-                    fontSize: 10
+                    fontSize: 12
                 },
                 indicatorStyle: {
                     borderBottomColor: '#6EA0BE',

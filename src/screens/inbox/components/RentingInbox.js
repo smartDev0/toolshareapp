@@ -15,12 +15,16 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { DEFAULT_COLOR } from './../../../styles/common';
 
 class RentingInbox extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <ScrollView style={styles.container}>
                     <View style={styles.mainContainer}>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this.props.privatNavigation.navigation.navigate('MessageScreen')}>
                             <View style={styles.item}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                     <View style={{ width: 60, height: 60, borderColor: 'grey', borderWidth: 0.8, borderRadius: 30 }}>
@@ -60,7 +64,8 @@ class RentingInbox extends React.Component {
                             </View>
                         </TouchableOpacity>
                         <View style={styles.divider}></View>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this.props.privatNavigation.navigation.navigate('MessageScreen')}>
                             <View style={styles.item}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                     <View style={{ width: 60, height: 60, borderColor: 'grey', borderWidth: 0.8, borderRadius: 30 }}>
@@ -100,7 +105,8 @@ class RentingInbox extends React.Component {
                             </View>
                         </TouchableOpacity>
                         <View style={styles.divider}></View>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this.props.privatNavigation.navigation.navigate('MessageScreen')}>
                             <View style={styles.item}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                     <View style={{ width: 60, height: 60, borderColor: 'grey', borderWidth: 0.8, borderRadius: 30 }}>
@@ -140,7 +146,8 @@ class RentingInbox extends React.Component {
                             </View>
                         </TouchableOpacity>
                         <View style={styles.divider}></View>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this.props.privatNavigation.navigation.navigate('MessageScreen')}>
                             <View style={styles.item}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                     <View style={{ width: 60, height: 60, borderColor: 'grey', borderWidth: 0.8, borderRadius: 30 }}>
@@ -180,7 +187,8 @@ class RentingInbox extends React.Component {
                             </View>
                         </TouchableOpacity>
                         <View style={styles.divider}></View>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this.props.privatNavigation.navigation.navigate('MessageScreen')}>
                             <View style={styles.item}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                     <View style={{ width: 60, height: 60, borderColor: 'grey', borderWidth: 0.8, borderRadius: 30 }}>

@@ -35,6 +35,7 @@ import LenderProfile from './screens/profile/LenderProfile';
 import Rental from './screens/tool/Rental';
 import UploadEquipment from './screens/equipment/UploadEquipment';
 import Inbox from './screens/inbox/Inbox';
+import Message from './screens/inbox/Message';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -218,6 +219,12 @@ const NavigatorRoutes = createStackNavigator(
         },
         InboxScreen: {
             screen: Inbox,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        MessageScreen: {
+            screen: Message,
             navigationOptions: {
                 headerShown: false,
             },
