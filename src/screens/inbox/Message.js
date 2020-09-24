@@ -52,7 +52,7 @@ class Message extends React.Component {
                             justifyContent: 'flex-end'
                         }}>
                             <TouchableOpacity
-                                onPress={() => this.props.navigation.navigate('CongratulationScreen')}>
+                                onPress={() => this.props.navigation.navigate('RentalScreen')}>
                                 <View style={styles.toolBox}>
 
                                     <FontAwesome name="briefcase" size={16} color="grey" />

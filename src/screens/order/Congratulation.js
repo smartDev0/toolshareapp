@@ -56,7 +56,7 @@ class Congratulation extends React.Component {
                             </View>
                             <View style={styles.toolBox}>
                                 <TouchableOpacity
-                                    onPress={() => this.props.navigation.navigate('LenderProfileScreen')}>
+                                    onPress={() => this.props.navigation.navigate('InboxScreen')}>
                                     <Fontisto name="email" style={{ textAlign: 'center' }} size={16} color="grey" />
                                 </TouchableOpacity>
                                
@@ -138,7 +138,7 @@ class Congratulation extends React.Component {
                                         borderWidth: 1,
                                         borderRadius:5
                                     }}
-                                    onPress={() => this.props.navigation.navigate('HelpScreen ')}>
+                                    onPress={() => this.props.navigation.navigate('HelpScreen')}>
                                     <Text style={{color:DEFAULT_COLOR}}>
                                         Help
                                     </Text>
