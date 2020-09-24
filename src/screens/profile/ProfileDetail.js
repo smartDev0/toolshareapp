@@ -16,11 +16,15 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 export default class ProfileDetail extends React.Component {
     constructor(props) {
         super(props);
     }
     componentDidMount() {
+    }
+    onRegionChange(region) {
+        this.setState({ region });
     }
     render() {
         return (
@@ -35,8 +39,8 @@ export default class ProfileDetail extends React.Component {
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => this.props.navigation.navigate('ProfileEditScreen')}
-                            style={{ position:'absolute',right:10, top:20 }}>
-                            <Text style={{color:'white'}}>Edit</Text>
+                            style={{ position: 'absolute', right: 10, top: 20 }}>
+                            <Text style={{ color: 'white' }}>Edit</Text>
                         </TouchableOpacity>
                         <View style={styles.imageGroup}>
                             <Image
@@ -50,15 +54,16 @@ export default class ProfileDetail extends React.Component {
                     <View style={styles.mainContainer}>
                         <Text style={styles.text}>About</Text>
                         <Text style={styles.description}>Hi, I am Ron!
-                        I have been colltecting and tinkering with tools for the last 40 years. So I’ve accumulated quite the collection. I mostly like to take on the odd renovation and wood working projects. 
+                        I have been colltecting and tinkering with tools for the last 40 years. So I’ve accumulated quite the collection. I mostly like to take on the odd renovation and wood working projects.
                         </Text>
                         <View style={styles.divider}></View>
                         <Text style={styles.text}>Ron's Equipment</Text>
                         <View style={{
                             flexDirection: 'row',
                             marginVertical: 5,
-                            alignItems: 'center',}}>
-                            <View style={{ flex:0.3}}>
+                            alignItems: 'center',
+                        }}>
+                            <View style={{ flex: 0.3 }}>
                                 <Image source={require('./../../../assets/images/Equipment1.png')}></Image>
                                 <Text style={styles.imageText}>Milwaukee Drill</Text>
                             </View>
@@ -75,7 +80,31 @@ export default class ProfileDetail extends React.Component {
                         </View>
                         <View style={styles.divider}></View>
                         <Text style={styles.text}>Location</Text>
-                        <View style={{ height: 180 }}></View>
+                        <View style={{ height: 180 , width:'100%'}}>
+                            <MapView
+                                style={styles.map}
+                                provider={PROVIDER_GOOGLE}
+                                region={{
+                                    latitude: 37.78825,
+                                    longitude: -122.4324,
+                                    latitudeDelta: 0.0922,
+                                    longitudeDelta: 0.0421,
+                                }}
+                            >
+                                <Marker
+                                    coordinate={{
+                                    latitude: 37.78825,
+                                    longitude: -122.4324,
+                                    }}
+                                    onDragEnd={(e) => alert(JSON.stringify(e.nativeEvent.coordinate))}
+                                    title={'Meeting Location'}
+                                    description={'This is the general area of Ron’s meet up loction.'}
+                                >
+                                    <Image source={require('./../../../assets/images/marker.png')}></Image>
+                                </Marker>
+
+                            </MapView>
+                        </View>
                         <View>
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.navigate('ProfileEditScreen')}>
@@ -96,6 +125,10 @@ const styles = StyleSheet.create({
         // flex: 1,
         // flexDirection: "column",
     },
+    map: {
+        width: "100%",
+        height: '100%',
+    },
     headerBackground: {
         backgroundColor: DEFAULT_COLOR,
         height: 150
@@ -112,12 +145,12 @@ const styles = StyleSheet.create({
         left: 25
     },
     imageText: {
-        fontSize:12
+        fontSize: 12
     },
     divider: {
         borderColor: 'grey',
         borderWidth: 0.5,
-        marginVertical:10
+        marginVertical: 10
     },
     mainContainer: {
         marginHorizontal: 10,
@@ -128,7 +161,7 @@ const styles = StyleSheet.create({
         marginVertical: 4
     },
     description: {
-        fontSize:13
+        fontSize: 13
     },
     item: {
         marginVertical: 5
