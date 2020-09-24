@@ -41,7 +41,8 @@ export default class Setting extends React.Component {
                     </View>
                     <View style={styles.mainContainer}>
                         <View style={styles.item}>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('InboxScreen')}>
                                 <Text style={styles.text}>
                                     Notifications
                             </Text>
@@ -51,7 +52,8 @@ export default class Setting extends React.Component {
                         </View>
                         <View style={styles.item}>
                             <TouchableOpacity>
-                                <Text style={styles.text}>
+                                <Text style={styles.text}
+                                    onPress={() => this.props.navigation.navigate('PaymentTransferScreen')}>
                                     Payment Transfers
                             </Text>
                             </TouchableOpacity>
@@ -84,7 +86,8 @@ export default class Setting extends React.Component {
                             <View style={styles.divider}></View>
                         </View>
                         <View style={styles.item}>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('FeedbackScreen')}>
                                 <Text style={styles.text}>
                                     Give Us Feedback
                             </Text>

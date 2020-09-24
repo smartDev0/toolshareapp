@@ -77,10 +77,13 @@ export default class ListingToolSilder extends React.Component {
                             <View style={styles.divider}></View>
                         </View>
                         <View style={styles.item}>
-                            <TouchableOpacity></TouchableOpacity>
-                            <Text style={styles.text}>
-                                List Equipment
-                        </Text>
+                            <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('EquipmentlistingScreen')}>
+                                <Text style={styles.text}>
+                                    List Equipment
+                                </Text>
+                                </TouchableOpacity>
+                            
                             <View style={styles.divider}></View>
                         </View>
                         <View style={styles.item}>
@@ -94,7 +97,8 @@ export default class ListingToolSilder extends React.Component {
                             <View style={styles.divider}></View>
                         </View>
                         <View style={styles.item}>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('PaymentTransferScreen')}>
                                 <Text style={styles.text}>
                                     Earning
                             </Text>
