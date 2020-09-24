@@ -17,7 +17,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
 
-class Congratulation extends React.Component {
+class Rental extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -43,14 +43,14 @@ class Congratulation extends React.Component {
                         marginTop: 30,
                         marginHorizontal: 10,
                     }}>
-                        <Text style={styles.title}>Reservation sent to Ashly!</Text>
+                        <Text style={styles.title}>Milwaukee M18</Text>
                         <View style={{
                             flexDirection: 'row',
-                            justifyContent:'flex-end'
+                            justifyContent: 'flex-end'
                         }}>
-                            <View style={styles.toolBox}>
+                            <View style={styles.activeToolBox}>
                                 <TouchableOpacity
-                                    onPress={() => this.props.navigation.navigate('RentalScreen')}>
+                                    onPress={() => this.props.navigation.navigate('CongratulationScreen')}>
                                     <FontAwesome name="briefcase" style={{ textAlign: 'center' }} size={16} color="grey" />
                                 </TouchableOpacity>
                             </View>
@@ -59,7 +59,7 @@ class Congratulation extends React.Component {
                                     onPress={() => this.props.navigation.navigate('LenderProfileScreen')}>
                                     <Fontisto name="email" style={{ textAlign: 'center' }} size={16} color="grey" />
                                 </TouchableOpacity>
-                               
+
                             </View>
                             <View style={styles.toolBox}>
                                 <Entypo name="user" style={{ textAlign: 'center' }} size={16} color="grey" />
@@ -67,9 +67,7 @@ class Congratulation extends React.Component {
                         </View>
                         <View style={styles.divider} />
                     </View>
-                    
                     <ScrollView style={styles.container}>
-
                         <View style={styles.mainContainer}>
                             <View style={{
                                 flexDirection: 'row',
@@ -77,7 +75,7 @@ class Congratulation extends React.Component {
                                 alignItems: 'center'
                             }}>
                                 <View>
-                                    <View style={{ flexDirection: 'row', alignItems: 'center' , marginVertical:1}}>
+                                    <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 1 }}>
                                         <View style={styles.box}>
                                             <Text >
                                                 Dec 6
@@ -124,38 +122,84 @@ class Congratulation extends React.Component {
                                     Do not abouse or misuse this equipment.
                                 </Text>
                             </View>
+                            <View style={styles.divider} />
+                            <View style={{
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                            }}>
+                                <View>
+                                    <Text style={styles.text}> Equipment at exchange</Text>
+                                </View>
+                                <View style={{ flexDirection: 'row'}}>
+                                    <View style={{
+                                        width: 50,
+                                        height: 30,
+                                        borderColor: DEFAULT_COLOR,
+                                        borderWidth: 0.8,
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        marginHorizontal: 5
+                                    }}>
+                                        <Feather name="camera" size={20} color={DEFAULT_COLOR} />
+                                    </View>
+                                    <View style={{
+                                        width: 50,
+                                        height: 30,
+                                        borderColor: DEFAULT_COLOR,
+                                        borderWidth: 0.8,
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        marginHorizontal:5
+                                    }}>
+                                        <Image
+                                            style={{width:'100%', height:'100%'}}
+                                            source={require("./../../../assets/images/3.png")}
+                                        />
+                                    </View>
+                                    <View style={{
+                                        justifyContent: 'center', alignItems: 'center'
+                                    }}>
+                                        <TouchableOpacity
+                                            onPress={() => this.props.navigation.navigate('UploadEquipmentScreen')}>
+                                            <Feather name="chevron-right" size={26} color={DEFAULT_COLOR} />
+                                        </TouchableOpacity>
+                                       
+                                    </View>
+                                </View>
+
+                            </View>
+                            <View style={styles.divider} />
                             <View
                                 style={{
                                     flexDirection: 'row',
                                     justifyContent: 'center',
-                                    marginVertical:30
-                            }}>
+                                    marginVertical: 30
+                                }}>
                                 <TouchableOpacity
                                     style={{
                                         paddingHorizontal: 20,
                                         paddingVertical: 5,
                                         borderColor: DEFAULT_COLOR,
                                         borderWidth: 1,
-                                        borderRadius:5
+                                        borderRadius: 5
                                     }}
                                     onPress={() => this.props.navigation.navigate('HelpScreen ')}>
-                                    <Text style={{color:DEFAULT_COLOR}}>
+                                    <Text style={{ color: DEFAULT_COLOR }}>
                                         Help
                                     </Text>
-                                    
                                 </TouchableOpacity>
-                                
                             </View>
                             <View style={{
                                 flexDirection: 'row',
                                 justifyContent: 'center',
-                                marginBottom:10
+                                marginBottom: 10
                             }}>
                                 <Text style={styles.label}>RESERVATION # 4593038</Text>
                             </View>
                         </View>
                     </ScrollView>
-                    <TabBar props={this.props}/>
+                    <TabBar props={this.props} />
                 </View>
 
 
@@ -163,7 +207,7 @@ class Congratulation extends React.Component {
         )
     }
 }
-export default Congratulation;
+export default Rental;
 
 const styles = StyleSheet.create({
     contactSectionStyle: {
@@ -274,7 +318,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginVertical: 10
     },
-    
+
     label: {
         margin: 5,
         color: 'grey',

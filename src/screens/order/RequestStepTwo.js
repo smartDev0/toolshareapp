@@ -71,22 +71,22 @@ class RequestStepTwo extends React.Component {
                             <View style={styles.divider} />
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.navigate('PaymentScreen')}>
-                            <View style={{
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
+                                <View style={{
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
                                 }}>
                                     <View style={{
                                         width: 50,
-                                        height:30,
+                                        height: 30,
                                         borderColor: DEFAULT_COLOR,
                                         borderWidth: 0.8,
                                         justifyContent: 'center',
-                                        alignItems:'center'
-                                }}>
-                                    <Feather name="plus" size={20} color={DEFAULT_COLOR} />
-                                </View>
-                                <Text style={styles.text}>Add payment</Text>
+                                        alignItems: 'center'
+                                    }}>
+                                        <Feather name="plus" size={20} color={DEFAULT_COLOR} />
+                                    </View>
+                                    <Text style={styles.text}>Add payment</Text>
                                     <View style={{
                                         justifyContent: 'center', alignItems: 'center'
                                     }}>
@@ -138,20 +138,20 @@ class RequestStepTwo extends React.Component {
                                     $44.85
                                 </Text>
                             </View>
-                            <View style={styles.divider}/>
+                            <View style={styles.divider} />
                             <View>
                                 <Text style={styles.text}>Cancelation Policy</Text>
                                 <Text style={styles.policyText}>
-                                    Cancel within 48 hours of booking and 14 days before checki-in to get full refund. Cancel up to & days begore check-in and get 50% refund (minus servie fees). Cancel within 7 days of rental and the reservation is non-refundable. 
+                                    Cancel within 48 hours of booking and 14 days before checki-in to get full refund. Cancel up to & days begore check-in and get 50% refund (minus servie fees). Cancel within 7 days of rental and the reservation is non-refundable.
                                 </Text>
                             </View>
                             <View style={styles.divider} />
                             <View>
                                 <Text style={styles.policyText}>
-                                    I agree to the 
+                                    I agree to the
                                     <Text style={styles.activeText}> Equipment Rules, Cancelation Policy,</Text>
-                                    and the  <Text style={styles.activeText}> Refund Policy.</Text> 
-                                    I also agree to pay the total amount shown, which includes Service Fees.    
+                                    and the  <Text style={styles.activeText}> Refund Policy.</Text>
+                                    I also agree to pay the total amount shown, which includes Service Fees.
                                 </Text>
                             </View>
                         </View>
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
         marginVertical: 5
     },
     policyText: {
-        fontSize:12
+        fontSize: 12
     },
 
     activeText: {

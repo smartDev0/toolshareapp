@@ -31,6 +31,9 @@ import RequestStepTwo from './screens/order/RequestStepTwo';
 import Payment from './screens/payment/Payment';
 import Order from './screens/order/Order';
 import Congratulation from './screens/order/Congratulation';
+import LenderProfile from './screens/profile/LenderProfile';
+import Rental from './screens/tool/Rental';
+import UploadEquipment from './screens/equipment/UploadEquipment';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -190,6 +193,24 @@ const NavigatorRoutes = createStackNavigator(
         },
         CongratulationScreen: {
             screen: Congratulation,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        LenderProfileScreen: {
+            screen: LenderProfile,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        RentalScreen: {
+            screen: Rental,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        UploadEquipmentScreen: {
+            screen: UploadEquipment,
             navigationOptions: {
                 headerShown: false,
             },

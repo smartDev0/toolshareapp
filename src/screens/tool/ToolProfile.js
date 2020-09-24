@@ -56,9 +56,12 @@ class ToolProfile extends React.Component {
                                     display: 'flex',
                                     alignItems: 'flex-end'
                                 }}>
+                                    <TouchableOpacity
+                                    onPress={() => this.props.navigation.navigate('LenderProfileScreen')}>
                                     <Image
                                         source={require("./../../../assets/images/Oval.png")}
-                                    />
+                                        />
+                                    </TouchableOpacity>
                                 </View>
                             </View>
                             <View>

@@ -16,7 +16,7 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
-export default class ProfileDetail extends React.Component {
+export default class LenderProfile extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -30,35 +30,31 @@ export default class ProfileDetail extends React.Component {
                         <TouchableOpacity
                             activeOpacity={0.7}
                             style={{ marginTop: 10, marginLeft: 5 }}
-                            onPress={() => this.props.navigation.navigate('HomeScreen')}>
+                            onPress={() => this.props.navigation.navigate('ToolProfileScreen')}>
                             <Feather name="chevron-left" size={35} color="white" />
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate('ProfileEditScreen')}
-                            style={{ position:'absolute',right:10, top:20 }}>
-                            <Text style={{color:'white'}}>Edit</Text>
                         </TouchableOpacity>
                         <View style={styles.imageGroup}>
                             <Image
                                 style={styles.image}
-                                source={require("./../../../assets/images/Avatar.png")} />
+                                source={require("./../../../assets/images/Oval.png")} />
                             <Text style={styles.profileText}>
-                                Hi!,I'm Ron
+                                Hi!,I'm Ashley
                             </Text>
                         </View>
                     </View>
                     <View style={styles.mainContainer}>
                         <Text style={styles.text}>About</Text>
-                        <Text style={styles.description}>Hi, I am Ron!
-                        I have been colltecting and tinkering with tools for the last 40 years. So I’ve accumulated quite the collection. I mostly like to take on the odd renovation and wood working projects. 
+                        <Text style={styles.description}>Hi, I am Ashley!
+                        I have been colltecting and tinkering with tools for the last 40 years. So I’ve accumulated quite the collection. I mostly like to take on the odd renovation and wood working projects.
                         </Text>
                         <View style={styles.divider}></View>
                         <Text style={styles.text}>Ron's Equipment</Text>
                         <View style={{
                             flexDirection: 'row',
                             marginVertical: 5,
-                            alignItems: 'center',}}>
-                            <View style={{ flex:0.3}}>
+                            alignItems: 'center',
+                        }}>
+                            <View style={{ flex: 0.3 }}>
                                 <Image source={require('./../../../assets/images/Equipment1.png')}></Image>
                                 <Text style={styles.imageText}>Milwaukee Drill</Text>
                             </View>
@@ -107,17 +103,17 @@ const styles = StyleSheet.create({
     },
     imageGroup: {
         position: 'absolute',
-        width: '100%',
+        width:'100%',
         top: 120,
         left: 25
     },
     imageText: {
-        fontSize:12
+        fontSize: 12
     },
     divider: {
         borderColor: 'grey',
         borderWidth: 0.5,
-        marginVertical:10
+        marginVertical: 10
     },
     mainContainer: {
         marginHorizontal: 10,
@@ -128,7 +124,7 @@ const styles = StyleSheet.create({
         marginVertical: 4
     },
     description: {
-        fontSize:13
+        fontSize: 13
     },
     item: {
         marginVertical: 5
