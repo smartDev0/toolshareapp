@@ -99,8 +99,22 @@ class LoginScreen extends React.Component{
                         </View>
                         <View style={styles.bottom_group}>
                             <Text style={styles.bottom_text}>
-                                By logging in, you agree to  ToolShare’s 
-                                <Text style={styles.active_text}> Terms of Service</Text> and <Text style={styles.active_text}>Privacy Policy.</Text>  
+                                <TouchableOpacity>
+                                    <Text style={styles.bottom_text}>
+                                        By logging in, you agree to  ToolShare’s 
+                                    </Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('ServiceScreen')}>
+                                    <Text style={styles.active_text}> Terms of Service </Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Text style={styles.bottom_text}>
+                                        and 
+                                    </Text>
+                                </TouchableOpacity>
+                                <Text style={styles.active_text}>Privacy Policy.</Text>  
+                                
                             </Text>
                         </View>
                     </View>

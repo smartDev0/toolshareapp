@@ -36,6 +36,7 @@ import Rental from './screens/tool/Rental';
 import UploadEquipment from './screens/equipment/UploadEquipment';
 import Inbox from './screens/inbox/Inbox';
 import Message from './screens/inbox/Message';
+import Service from './screens/service/Service';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -225,6 +226,12 @@ const NavigatorRoutes = createStackNavigator(
         },
         MessageScreen: {
             screen: Message,
+            navigationOptions: {
+                headerShown: false,
+            },
+        },
+        ServiceScreen: {
+            screen: Service,
             navigationOptions: {
                 headerShown: false,
             },

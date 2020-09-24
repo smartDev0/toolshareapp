@@ -96,7 +96,7 @@ export default class Setting extends React.Component {
                             <View style={styles.divider}></View>
                         </View>
                         <View style={styles.item}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('LoginScreen')}>
                                 <Text style={styles.text}>
                                     Logout
                             </Text>
