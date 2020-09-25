@@ -13,7 +13,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { DEFAULT_COLOR } from './../../styles/common';
 import RNPickerSelect from 'react-native-picker-select';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import DateTimePicker from '@react-native-community/datetimepicker';
+// import DateTimePicker from '@react-native-community/datetimepicker';
 
 import Moment from 'moment';
 
@@ -181,7 +181,7 @@ class EquipmentLocation extends React.Component {
                                         </Text>
                                     </TouchableOpacity>
                                 </View>
-                                {startShow && (
+                                {/* {startShow && (
                                     <DateTimePicker
                                         testID="dateTimePicker"
                                         value={startDate}
@@ -189,7 +189,7 @@ class EquipmentLocation extends React.Component {
                                         is24Hour={true}
                                         onChange={this.onChange}
                                     />
-                                )}
+                                )} */}
                             </View>
                             <View style={styles.divider}></View>
                             <View style={{
@@ -214,7 +214,7 @@ class EquipmentLocation extends React.Component {
                                         </Text>
                                     </TouchableOpacity>
                                 </View>
-                                {endShow && (
+                                {/* {endShow && (
                                     <DateTimePicker
                                         testID="dateTimePicker"
                                         value={endDate}
@@ -222,7 +222,7 @@ class EquipmentLocation extends React.Component {
                                         is24Hour={true}
                                         onChange={this.onChangeEnd}
                                     />
-                                )}
+                                )} */}
                             </View>
                         </View>
                     </View>

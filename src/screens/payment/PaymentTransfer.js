@@ -14,7 +14,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { DEFAULT_COLOR } from '../../styles/common';
 import TabBar from '../../components/TabBar';
-import DateTimePicker from '@react-native-community/datetimepicker';
+// import DateTimePicker from '@react-native-community/datetimepicker';
 import Tooltip from 'react-native-walkthrough-tooltip';
 import Moment from 'moment';
 
@@ -70,7 +70,7 @@ class PaymentTransfer extends React.Component {
                             <Feather name="chevron-down" size={20} color={DEFAULT_COLOR} />
                         </View>
                     </TouchableOpacity>
-                    {isShow && (
+                    {/* {isShow && (
                         <DateTimePicker
                             testID="dateTimePicker"
                             value={date}
@@ -78,7 +78,7 @@ class PaymentTransfer extends React.Component {
                             is24Hour={true}
                             onChange={this.onChange}
                         />
-                    )}
+                    )} */}
                 </View>
                 <View style={{
                     borderBottomColor: DEFAULT_COLOR,
