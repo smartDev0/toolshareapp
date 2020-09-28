@@ -96,12 +96,7 @@ export default class LenderProfile extends React.Component {
                                 </Marker>
                             </MapView>
                         </View>
-                        <View>
-                            <TouchableOpacity
-                                onPress={() => this.props.navigation.navigate('ProfileEditScreen')}>
-                                <Text style={styles.activeText}>Edit Profile</Text>
-                            </TouchableOpacity>
-                        </View>
+                        <View style={{marginVertical:5}}></View>
                     </View>
 
                 </ScrollView>
