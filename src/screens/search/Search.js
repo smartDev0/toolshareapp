@@ -24,6 +24,10 @@ class SearchScreen extends Component {
                 <View style={{}}>
                     <TouchableOpacity
                         activeOpacity={0.7}
+                        style={{
+                            marginLeft: 0,
+                            marginTop:40
+                        }}
                         onPress={() => this.props.navigation.navigate('HomeScreen')}>
                         <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                     </TouchableOpacity>

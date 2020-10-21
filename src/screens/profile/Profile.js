@@ -27,11 +27,11 @@ export default class ListingToolSilder extends React.Component {
             <View style={{ flex: 1 }}>
                 <ScrollView style={styles.container}>
                     <View style={styles.headerBackground}>
-                        <TouchableOpacity
+                        {/* <TouchableOpacity
                             style={{ marginTop: 10, marginLeft: 5 }}
                             onPress={() => this.props.navigation.navigate('HomeScreen')}>
                             <Feather name="chevron-left" size={35} color="white" />
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
                         <View style={styles.imageGroup}>
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.navigate('ProfileDetailScreen')}>
@@ -76,7 +76,7 @@ export default class ListingToolSilder extends React.Component {
 
                             <View style={styles.divider}></View>
                         </View>
-                        <View style={styles.item}>
+                        {/* <View style={styles.item}>
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.navigate('EquipmentlistingScreen')}>
                                 <Text style={styles.text}>
@@ -85,7 +85,7 @@ export default class ListingToolSilder extends React.Component {
                                 </TouchableOpacity>
                             
                             <View style={styles.divider}></View>
-                        </View>
+                        </View> */}
                         <View style={styles.item}>
                             <TouchableOpacity
                                 onPress={() => this.props.navigation.navigate('FeedbackScreen')}>

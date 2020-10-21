@@ -24,11 +24,11 @@ export default class Service extends React.Component {
     }
     render() {
         return (
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1 ,marginBottom:20}}>
                 <View style={styles.headerBackground}>
                     <TouchableOpacity
                         activeOpacity={0.7}
-                        style={{ marginTop: 10, marginLeft: 5 }}
+                        style={{ marginTop: 30, marginLeft: 0 }}
                         onPress={() => this.props.navigation.navigate('HomeScreen')}>
                         <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                     </TouchableOpacity>

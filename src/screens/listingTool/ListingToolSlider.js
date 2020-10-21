@@ -70,7 +70,7 @@ export default class ListingToolSilder extends React.Component {
                         onPress={() => { this.props.navigation.navigate('HomeScreen') }}
                         style={{
                         marginLeft: 10,
-                        marginTop:10
+                        marginTop:30
                     }}>
                         <AntDesign name="close" size={26} color="white" />
                     </TouchableOpacity>

@@ -18,7 +18,7 @@ import { DEFAULT_COLOR } from './../../../styles/common';
 class Reservation extends React.Component {
     render() {
         return (
-            <SafeAreaView style={{ flex: 1 }}>
+            <SafeAreaView style={{ flex: 1, backgroundColor:'white' }}>
                 <ScrollView style={styles.container}>
                     <View style={styles.mainContainer}>
                         <View style={styles.item}>
@@ -293,7 +293,7 @@ const styles = StyleSheet.create({
     },
     divider: {
         borderBottomColor: 'grey',
-        borderWidth: 0.3,
+        borderWidth: 0.5,
     },
     buttonText: {
         color: 'white'

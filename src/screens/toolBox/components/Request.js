@@ -22,7 +22,7 @@ class Request extends React.Component {
         super(props);
         this.state = {
             flag: false,
-            rejectFlag:false
+            rejectFlag: false
         }
     }
     acceptOnChange = () => {
@@ -33,7 +33,7 @@ class Request extends React.Component {
     }
     render() {
         return (
-            <SafeAreaView style={{ flex: 1 }}>
+            <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
                 <ScrollView style={styles.container}>
                     <View style={styles.mainContainer}>
                         <View style={styles.item}>
@@ -111,12 +111,12 @@ class Request extends React.Component {
                                 </Text>
                             </View>
                             <View>
-   
-                               <Text style={styles.textDescription}>
-                                  Duration: {'\n'}
+
+                                <Text style={styles.textDescription}>
+                                    Duration: {'\n'}
                                     Dec 6~9
                                 </Text>
-                           </View>
+                            </View>
                             <View>
                                 <Text style={styles.textDescription}>
                                     Total: {'\n'}
@@ -131,7 +131,7 @@ class Request extends React.Component {
                                         padding: 5,
                                         marginVertical: 3,
                                         backgroundColor: DEFAULT_COLOR,
-                                        width:80
+                                        width: 80
                                     }}
                                     onPress={this.acceptOnChange}>
                                     <Text style={styles.acceptText}>Accept</Text>
@@ -218,12 +218,22 @@ class Request extends React.Component {
                     >
                         <View style={styles.centeredView}>
                             <View style={styles.modalView}>
+                                <TouchableOpacity
+                                    style={{
+                                        left: 10,
+                                        marginTop: 10,
+                                        position: 'absolute'
+                                    }}
+                                    onPress={() => { this.setState({ flag: false }) }}
+                                >
+                                    <AntDesign name="close" size={26} color="black" />
+                                </TouchableOpacity>
                                 <Text style={styles.modalTitle}>Accept rental request.</Text>
                                 <Text style={styles.modalText}>By accepting this request you are agreeing to allow Ashley to rent and use this equipment.</Text>
                                 <TouchableOpacity
                                     style={{ ...styles.openButton, backgroundColor: DEFAULT_COLOR }}
                                     onPress={() => {
-                                        this.setState({flag:false})
+                                        this.setState({ flag: false })
                                     }}
                                 >
                                     <Text style={styles.textStyle}>Accept</Text>
@@ -241,6 +251,16 @@ class Request extends React.Component {
                     >
                         <View style={styles.centeredView}>
                             <View style={styles.modalView}>
+                                <TouchableOpacity
+                                    style={{
+                                        left: 10,
+                                        marginTop: 10,
+                                        position: 'absolute'
+                                    }}
+                                    onPress={() => { this.setState({ rejectFlag: false }) }}
+                                >
+                                    <AntDesign name="close" size={26} color="black" />
+                                </TouchableOpacity>
                                 <Text style={styles.modalTitle}>Accept rental request.</Text>
                                 <Text style={styles.modalText}>By accepting this request you are agreeing to allow Ashley to rent and use this equipment.</Text>
                                 <TouchableOpacity
@@ -278,7 +298,7 @@ const styles = StyleSheet.create({
     },
     divider: {
         borderBottomColor: 'grey',
-        borderWidth: 0.3,
+        borderWidth: 0.5,
     },
     buttonText: {
         color: 'white'
@@ -328,7 +348,7 @@ const styles = StyleSheet.create({
     acceptText: {
         fontSize: 10,
         color: 'white',
-        textAlign:'center'
+        textAlign: 'center'
     },
     rejectText: {
         fontSize: 10,
@@ -358,8 +378,8 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 35,
         alignItems: "center",
-        shadowColor: "#000",
-        shadowOpacity: 0.75,
+        // shadowColor: "#000",
+        shadowOpacity: 0.15,
         shadowRadius: 3.84,
         elevation: 5
     },
@@ -367,7 +387,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
         color: 'white',
-        width:150
+        width: 150
     },
     rejectButton: {
         borderRadius: 5,
@@ -375,7 +395,7 @@ const styles = StyleSheet.create({
         color: 'black',
         width: 150,
         borderColor: 'grey',
-        borderWidth:0.6
+        borderWidth: 0.6
     },
     textStyle: {
         color: "white",
@@ -387,11 +407,12 @@ const styles = StyleSheet.create({
     },
     modalTitle: {
         marginBottom: 15,
-        fontSize: 18,
-        textAlign: "center"},
+        fontSize: 20,
+        textAlign: "center"
+    },
     modalText: {
         marginBottom: 15,
-        fontSize:14,
+        fontSize: 14,
         textAlign: "center"
     }
 });

@@ -35,19 +35,19 @@ class Message extends React.Component {
                         paddingVertical: 12,
                     }}>
                         <TouchableOpacity
-                            style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                            style={{ marginTop: 30, marginLeft: 0, position: 'absolute', zIndex: 10 }}
                             onPress={() => this.props.navigation.navigate('InboxScreen')}>
                             <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
                     </View>
                     <View style={{
-                        marginTop: 30,
+                        marginTop: 40,
                         marginHorizontal: 10,
                     }}>
                         <View>
                             <Text style={styles.title}>Ashley</Text>
                         </View>
-                        <View style={{
+                        {/* <View style={{
                             flexDirection: 'row',
                             justifyContent: 'flex-end'
                         }}>
@@ -68,9 +68,9 @@ class Message extends React.Component {
                             <View style={styles.toolBox}>
                                 <Entypo name="user" size={16} color="grey" />
                             </View>
-                        </View>
+                        </View> */}
                         <View style={{
-                            marginTop: -20
+                            marginTop: 10
                         }}>
                             <Text style={styles.activeText}>Confirmed</Text>
                         </View>
@@ -83,12 +83,16 @@ class Message extends React.Component {
                                 alignItems: 'center',
                                 marginVertical: 5
                             }}>
-                                <View style={{ width: 50, height: 50, borderRadius: 25 }}>
-                                    <Image
-                                        style={styles.imageStyle}
-                                        source={require("./../../../assets/images/User1.png")}
-                                    />
-                                </View>
+                                <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('ProfileScreen')}>
+                                    <View style={{ width: 50, height: 50, borderRadius: 25 }}>
+                                        <Image
+                                            style={styles.imageStyle}
+                                            source={require("./../../../assets/images/User1.png")}
+                                        />
+                                    </View>
+                                </TouchableOpacity>
+                               
                                 <View style={{
                                     maxWidth: d.width * 0.5,
                                     padding: 10,
@@ -119,12 +123,16 @@ class Message extends React.Component {
                                         Hey George, sounds good. Let me know if there is anything else you require.
                                     </Text>
                                 </View>
-                                <View style={{ width: 50, height: 50, borderRadius: 25 }}>
-                                    <Image
-                                        style={styles.imageStyle}
-                                        source={require("./../../../assets/images/User2.png")}
-                                    />
-                                </View>
+                                <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('ProfileScreen')}>
+                                    <View style={{ width: 50, height: 50, borderRadius: 25 }}>
+                                        <Image
+                                            style={styles.imageStyle}
+                                            source={require("./../../../assets/images/User2.png")}
+                                        />
+                                    </View>
+                                </TouchableOpacity>
+
                             </View>
                         </View>
                     </ScrollView>

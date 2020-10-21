@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
     },
     divider: {
         borderBottomColor: 'grey',
-        borderWidth: 0.3,
+        borderWidth: 0.5,
     },
     buttonText: {
         color: 'white'

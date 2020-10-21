@@ -13,7 +13,7 @@ import {
     Button,
     ImageBackground
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import { DEFAULT_COLOR } from '../../styles/common';
 
 const PinScreen = (props) => {
@@ -26,6 +26,14 @@ const PinScreen = (props) => {
                 style={styles.image_background}
                 source={require("./../../../assets/images/LogInBackground.jpg")}>
                 <View style={styles.image_background_color}>
+                    <TouchableOpacity
+                        style={{
+                        marginLeft: 20,
+                        marginTop:40
+                    }}>
+                        <AntDesign name="close" size={26} color="white" />
+                    </TouchableOpacity>
+
                     <Image
                         source={require('./../../../assets/images/logo.png')}
                         style={styles.image}
@@ -68,10 +76,11 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop:120
+        marginTop:120,
+        // height:45
     },
     image_background_color: {
-        backgroundColor: 'rgba(0,0,0,.3)',
+        backgroundColor: 'rgba(0,0,0,.4)',
         height: '100%',
         width: '100%',
     },
@@ -94,6 +103,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'row',
         flexWrap: 'wrap',
+        borderRadius:3
     },
     signup_text: {
         fontSize: 18,
@@ -107,5 +117,6 @@ const styles = StyleSheet.create({
         borderColor: DEFAULT_COLOR,
         backgroundColor: 'transparent',
         borderWidth: 2,
+        borderRadius:3
     }
 })

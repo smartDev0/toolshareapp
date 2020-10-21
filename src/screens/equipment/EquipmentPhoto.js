@@ -21,14 +21,14 @@ class EquipmentPhoto extends React.Component {
                     paddingVertical: 12,
                 }}>
                     <TouchableOpacity
-                        style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                        style={{ marginTop: 30, marginLeft: 0, position: 'absolute', zIndex: 10 }}
                         onPress={() => this.props.navigation.navigate('EquipmentLocationScreen')}>
                         <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                     </TouchableOpacity>
                 </View>
                 <View style={{
                     flexDirection: 'row',
-                    marginTop: 30,
+                    marginTop: 45,
                     marginHorizontal: 10,
                     alignItems: 'center',
                 }}>
@@ -53,7 +53,7 @@ class EquipmentPhoto extends React.Component {
                                     justifyContent: 'center',
                                     alignItems: 'center'
                                 }}>
-                                    <FontAwesome name="cloud-upload" size={20} color={DEFAULT_COLOR} />
+                                    <FontAwesome name="cloud-upload" size={20} color="#ea565c" />
                                     <Text> Select Photos</Text>
                                 </View>
                             </TouchableOpacity>

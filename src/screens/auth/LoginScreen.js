@@ -32,6 +32,10 @@ class LoginScreen extends React.Component{
                     <View style={styles.image_background_color}>
                         <View>
                             <TouchableOpacity
+                                style={{
+                                    marginLeft: 0,
+                                    marginTop:40
+                                }}
                                 activeOpacity={0.7}
                                 onPress={() => this.props.navigation.navigate('PinScreen')}>
                                 <Icon name="chevron-left" size={35} color="white" />
@@ -72,6 +76,7 @@ class LoginScreen extends React.Component{
                         <TouchableOpacity
                             style={styles.signup_button}
                             activeOpacity={0.7}
+                            onPress={() => this.props.navigation.navigate('HomeScreen')}
                         >
                             <Text style={styles.signup_text}>Log In</Text>
                         </TouchableOpacity>
@@ -83,7 +88,7 @@ class LoginScreen extends React.Component{
                             </TouchableOpacity>
 
                             <View style={styles.divide}></View>
-                            <Text style={styles.text_link}>
+                            <View style={styles.text_link}>
                                 <TouchableOpacity>
                                     <Text style={styles.white_color}>
                                         Don't have and account?
@@ -95,10 +100,10 @@ class LoginScreen extends React.Component{
                                     onPress={() => this.props.navigation.navigate('RegisterScreen')}>
                                     <Text style={styles.active_text}> Sign Up</Text>
                                 </TouchableOpacity>
-                            </Text>
+                            </View>
                         </View>
                         <View style={styles.bottom_group}>
-                            <Text style={styles.bottom_text}>
+                            <View style={styles.bottom}>
                                 <TouchableOpacity>
                                     <Text style={styles.bottom_text}>
                                         By logging in, you agree to  ToolShare’s 
@@ -113,9 +118,12 @@ class LoginScreen extends React.Component{
                                         and 
                                     </Text>
                                 </TouchableOpacity>
-                                <Text style={styles.active_text}>Privacy Policy.</Text>  
-                                
-                            </Text>
+                                <TouchableOpacity
+                                    onPress={() => this.props.navigation.navigate('ServiceScreen')}>
+
+                                    <Text style={styles.active_text}>Privacy Policy.</Text>  
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     </View>
                 </ImageBackground>
@@ -212,11 +220,22 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'center',
         margin: 8,
+        flexDirection:'row',
+        justifyContent:'center'
     },
     bottom_text:{
         color: 'white',
         fontSize: 14,
         textAlign:'center'
+    },
+    bottom:{
+        color: 'white',
+        textAlign: 'center',
+        margin: 8,
+        display:'flex',
+        flexWrap:'wrap',
+        justifyContent:'center',
+        flexDirection:'row'
     },
     active_text: {
         color: '#6EA0BE',

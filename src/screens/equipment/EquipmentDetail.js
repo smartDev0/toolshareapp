@@ -29,20 +29,20 @@ class EquipmentDetail extends React.Component {
     }
     render() {
         return (
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, backgroundColor:'white' }}>
                 <View style={{
                     flexDirection: 'row',
                     paddingVertical: 12,
                 }}>
                     <TouchableOpacity
-                        style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                        style={{ marginTop: 30, marginLeft: 5, position: 'absolute', zIndex: 10 }}
                         onPress={() => this.props.navigation.navigate('EquipmentlistingScreen')}>
                         <AntDesign name="close" size={26} color={DEFAULT_COLOR} />
                     </TouchableOpacity>
                 </View>
                 <View style={{
                     flexDirection: 'row',
-                    marginTop: 20,
+                    marginTop: 45,
                     marginHorizontal: 10,
                     alignItems: 'center',
                 }}>

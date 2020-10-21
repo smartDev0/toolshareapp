@@ -13,9 +13,9 @@ class Renting extends React.Component{
 
     render() {
         return (
-            <SafeAreaView style={{ flex: 1 }}>
+            <SafeAreaView style={{ flex: 1 ,  backgroundColor:'white'}}>
                 <ScrollView>
-                    <View style={{ flex: 1, padding: 10 }}>
+                    <View style={{ flex: 1, padding: 10 ,}}>
                         <Text style={styles.title}>Earn money as a ToolShare Lender</Text>
                         <View style={styles.itemContainer}>
                             <View style={{ flex: 0.475, flexDirection: 'row',  }}>

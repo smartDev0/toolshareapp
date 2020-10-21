@@ -19,8 +19,8 @@ export default class HomeScreenSearchSection extends Component {
                 placeholderTextColor="black"
               />
             </View>
-            <Text style={styles.headerText}>Like Airbnb but for tools</Text>
-            <Text style={styles.headerText}>And Equipment</Text>
+            {/* <Text style={styles.headerText}>Like Airbnb but for tools</Text>
+            <Text style={styles.headerText}>And Equipment</Text> */}
           </ImageBackground>
         </View>
       </View>

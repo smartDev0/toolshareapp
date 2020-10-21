@@ -13,13 +13,8 @@ import {
 import HomeScreenSearchSection from './../../components/HomeScreenSearchSection';
 import HomeScreenSection from './../../components/HomeScreenSearchSection';
 
-// const handToolSectionImage = require('../../assets/images/HandToolsSectionImage.png');
-// const powerToolSectionImage = require('../../assets/images/PowerToolsSectionImage.png');
-// const ladderSectionImage = require('../../assets/images/LadderSectionImage.png');
-// const trailerSectionImage = require('../../assets/images/TrailersSectionImage.png');
-// const lenderSectionImage = require('../../assets/images/LenderSectionImage.png');
 import TabBar from './../../components/TabBar';
-class HomeScreen extends Component { 
+class HomeScreen extends Component {
     constructor(props) {
         super(props);
     }
@@ -27,7 +22,7 @@ class HomeScreen extends Component {
         return (
             <View style={{ flex: 1 }}>
                 <ScrollView>
-                    <View style={{marginBottom:10}}>
+                    <View style={{ marginBottom: 10 }}>
                         <HomeScreenSearchSection />
                         <View style={styles.shortCutSectionStyle}>
                             <View style={{
@@ -35,16 +30,18 @@ class HomeScreen extends Component {
                                 marginHorizontal: 10,
                                 flexDirection: 'row',
                                 justifyContent: 'center',
-                                flex:1
+                                flex: 1
                             }}>
                                 <TouchableOpacity
                                     activeOpacity={0.7}
+                                    onPress={() => this.props.navigation.navigate('SearchScreen')}
                                     style={styles.button}>
                                     <Text style={styles.button_text}>
                                         Hand Tools
                                     </Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity
+                                    onPress={() => this.props.navigation.navigate('SearchScreen')}
                                     activeOpacity={0.7}
                                     style={styles.button}>
                                     <Text style={styles.button_text}>
@@ -52,19 +49,21 @@ class HomeScreen extends Component {
                                     </Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity
+                                    onPress={() => this.props.navigation.navigate('SearchScreen')}
                                     activeOpacity={0.7}
                                     style={styles.button}>
                                     <Text style={styles.button_text}>
                                         Ladders & Scaffolding</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity
+                                    onPress={() => this.props.navigation.navigate('SearchScreen')}
                                     activeOpacity={0.7}
                                     style={styles.button}>
                                     <Text style={styles.button_text}>
                                         Trailers</Text>
                                 </TouchableOpacity>
                             </View>
-                            
+
                         </View>
                         <View style={styles.categorySectionsStyle}>
                             <TouchableOpacity activeOpacity={0.5}
@@ -98,7 +97,7 @@ class HomeScreen extends Component {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            
+
                         </View>
                         <View style={styles.categorySectionsStyle}>
                             <TouchableOpacity activeOpacity={0.5}
@@ -115,8 +114,8 @@ class HomeScreen extends Component {
                                     </View>
                                 </View>
 
-                                </TouchableOpacity>
-                            </View>
+                            </TouchableOpacity>
+                        </View>
                         <View style={styles.categorySectionsStyle}>
                             <TouchableOpacity activeOpacity={0.5}
                                 onPress={() => this.props.navigation.navigate('SearchScreen')}>
@@ -149,7 +148,7 @@ class HomeScreen extends Component {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            
+
                         </View>
                         <View style={styles.categorySectionsStyle}>
                             <TouchableOpacity activeOpacity={0.5}
@@ -166,12 +165,12 @@ class HomeScreen extends Component {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            
+
                         </View>
                         <View style={styles.categorySectionsStyle}></View>
                     </View>
                 </ScrollView>
-                <TabBar props={this.props}/>
+                <TabBar props={this.props} />
             </View>
         )
     }
@@ -203,20 +202,20 @@ const styles = StyleSheet.create({
     button: {
         borderColor: '#9B9B9B',
         borderWidth: 1,
-        borderRadius: 5,
-        margin:5
+        borderRadius: 4,
+        margin: 7
     },
     button_text: {
         padding: 5,
-        fontSize:12
+        fontSize: 12
     },
     categorySectionsStyle: {
-        marginHorizontal:10
+        marginHorizontal: 10
     },
     textStyle: {
         marginTop: 10,
         marginBottom: 5,
-        color:'black'
+        color: 'black'
     },
     imageStyle: {
         flex: 1,

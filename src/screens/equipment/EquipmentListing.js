@@ -22,15 +22,15 @@ class EquipmentListing extends React.Component {
                     flexDirection: 'row',
                     paddingVertical: 12,
                 }}>
-                    <TouchableOpacity
-                        style={{ marginTop: 15, right: 10, position: 'absolute', zIndex: 10 }}
+                    {/* <TouchableOpacity
+                        style={{ marginTop: 39, right: 1, position: 'absolute', zIndex: 10 }}
                         onPress={() => this.props.navigation.navigate('EquipmentDetailScreen')}>
                         <AntDesign name="plus" size={26} color={DEFAULT_COLOR} />
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </View>
                 <View style={{
                     flexDirection: 'row',
-                    marginTop: 20,
+                    marginTop: 45,
                     marginHorizontal: 10,
                     alignItems: 'center',
                     marginBottom:6

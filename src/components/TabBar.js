@@ -20,11 +20,12 @@ const TabBar = ({props}) => {
   return (
     <View
       style={{
-        paddingTop:6,
+        paddingTop:12,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         borderTopColor: 'grey',
         borderWidth: 1,
+        paddingBottom:12
       }}>
       <TouchableHighlight
         onPress={() => goHome() }>

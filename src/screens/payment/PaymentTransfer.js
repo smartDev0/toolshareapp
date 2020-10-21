@@ -49,14 +49,14 @@ class PaymentTransfer extends React.Component {
 
                 }}>
                     <TouchableOpacity
-                        style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                        style={{ marginTop: 30, marginLeft: 0, position: 'absolute', zIndex: 10 }}
                         onPress={() => this.props.navigation.navigate('ToolBoxScreen')}>
                         <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                     </TouchableOpacity>
                 </View>
                 <View style={{
                     flexDirection: 'row',
-                    marginTop: 30,
+                    marginTop: 40,
                     marginHorizontal: 10,
                     justifyContent: 'space-between',
                     alignItems:'center'
@@ -373,7 +373,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 14,
-        marginVertical: 5
+        marginVertical: 5,
     },
     activeText: {
         fontSize: 14,

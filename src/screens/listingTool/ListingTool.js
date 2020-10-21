@@ -29,6 +29,7 @@ class ListingTool extends React.Component{
                         <View>
                             <TouchableOpacity
                                 activeOpacity={0.7}
+                                style={{ marginTop: 30, marginLeft: 0 }}
                                 onPress={() => this.props.navigation.navigate('HomeScreen')}>
                                 <Feather name="chevron-left" size={35} color="white" />
                             </TouchableOpacity>

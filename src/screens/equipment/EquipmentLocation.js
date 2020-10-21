@@ -47,20 +47,20 @@ class EquipmentLocation extends React.Component {
         Moment.locale('en');
         const { mode, date, startShow, endShow, startDate, endDate } = this.state;
         return (
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, backgroundColor:'white' }}>
                 <View style={{
                     flexDirection: 'row',
                     paddingVertical: 12,
                 }}>
                     <TouchableOpacity
-                        style={{ marginTop: 15, marginLeft: 0, position: 'absolute', zIndex: 10 }}
+                        style={{ marginTop: 30, marginLeft: 0, position: 'absolute', zIndex: 10 }}
                         onPress={() => this.props.navigation.navigate('EquipmentDetailScreen')}>
                         <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                     </TouchableOpacity>
                 </View>
                 <View style={{
                     flexDirection: 'row',
-                    marginTop: 25,
+                    marginTop: 45,
                     marginHorizontal: 10,
                     alignItems: 'center',
                 }}>

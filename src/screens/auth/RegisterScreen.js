@@ -55,6 +55,10 @@ class RegisterScreen extends React.Component {
                         <View>
                             <TouchableOpacity
                                 activeOpacity={0.7}
+                                style={{
+                                    marginLeft: 0,
+                                    marginTop:40
+                                }}
                                 onPress={() => this.props.navigation.navigate('PinScreen')}>
                                 <Icon name="chevron-left" size={35} color="white" />
                             </TouchableOpacity>
@@ -253,6 +257,7 @@ class RegisterScreen extends React.Component {
                                     />
                                 </View>
                             </View>
+                            <View style={{height:40}}></View>
                             <View style={styles.checkboxContainer}>
                                 <CheckBox
                                     style={styles.checkbox}
@@ -287,7 +292,7 @@ class RegisterScreen extends React.Component {
                             <Text style={styles.signup_text}>Get Stared</Text>
                         </TouchableOpacity>
                         <View style={styles.divide}></View>
-                        <Text style={styles.text_link}>
+                        <View style={styles.text_link}>
                             <TouchableOpacity>
                                 <Text style={styles.white_color}>
                                     Already have a ToolShare account?
@@ -298,7 +303,7 @@ class RegisterScreen extends React.Component {
                                 onPress={() => this.props.navigation.navigate('LoginScreen')}>
                                 <Text style={styles.active_text}> Login</Text>
                             </TouchableOpacity>
-                        </Text>
+                        </View>
                     </View>
                 </ImageBackground>
             </View>
@@ -411,6 +416,7 @@ const styles = StyleSheet.create({
     checkboxContainer: {
         flexDirection: "row",
         marginBottom: 0,
+        // marginTop:20
     },
     divide: {
         borderColor: "white",
@@ -428,7 +434,9 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         margin: 8,
         display:'flex',
-        flexWrap:'wrap'
+        flexWrap:'wrap',
+        justifyContent:'center',
+        flexDirection:'row'
     },
     small_text: {
         color: 'white',

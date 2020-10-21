@@ -86,7 +86,12 @@ function ToolBox(navigation) {
                     <Stack.Screen
                         name="TabStack"
                         component={() => TabStack(navigation)}
-                        options={{ title: 'Toolbox' }} />
+                        options={{ title: 'Toolbox' ,
+                            headerTitleStyle: {
+                            textAlign: 'left',
+                          },}} 
+
+                        />
                 </Stack.Navigator>
             </NavigationContainer>
             <TabBar props={navigation} />
