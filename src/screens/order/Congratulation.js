@@ -34,13 +34,13 @@ class Congratulation extends React.Component {
                         paddingVertical: 12,
                     }}>
                         <TouchableOpacity
-                            style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                            style={{ marginTop: 30, marginLeft: 5, position: 'absolute', zIndex: 10 }}
                             onPress={() => this.props.navigation.navigate('HomeScreen')}>
                             <AntDesign name="close" size={26} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
                     </View>
                     <View style={{
-                        marginTop: 30,
+                        marginTop: 60,
                         marginHorizontal: 10,
                     }}>
                         <Text style={styles.title}>Reservation sent to Ashly!</Text>
@@ -82,7 +82,7 @@ class Congratulation extends React.Component {
                                 alignItems: 'center'
                             }}>
                                 <View>
-                                    <View style={{ flexDirection: 'row', alignItems: 'center' , marginVertical:1}}>
+                                    <View style={{ flexDirection: 'row', alignItems: 'center' , marginVertical:8}}>
                                         <View style={styles.box}>
                                             <Text >
                                                 Dec 6
@@ -105,7 +105,7 @@ class Congratulation extends React.Component {
                                         </Text>
                                     </View>
                                 </View>
-                                <View style={{ height: 60, width: 100, }}>
+                                <View style={{ height: 80, width: 120, }}>
                                     <Image
                                         style={styles.imageStyle}
                                         source={require("./../../../assets/images/3.png")}
@@ -152,35 +152,44 @@ class Congratulation extends React.Component {
                                     Do not abouse or misuse this equipment.
                                 </Text>
                             </View>
-                            <View
-                                style={{
+                            <View style={{        
+                                        // flex: 1,
+                                        // justifyContent: 'flex-end',
+                                        // marginBottom: 0,
+                                        // position:'absolute'
+                                        marginTop:180
+                            }}> 
+                                <View
+                                    style={{
+                                        flexDirection: 'row',
+                                        justifyContent: 'center',
+                                        marginBottom:5
+                                }}>
+                                    <TouchableOpacity
+                                        style={{
+                                            paddingHorizontal: 20,
+                                            paddingVertical: 5,
+                                            borderColor: DEFAULT_COLOR,
+                                            borderWidth: 1,
+                                            borderRadius:5
+                                        }}
+                                        onPress={() => this.props.navigation.navigate('HelpScreen')}>
+                                        <Text style={{color:DEFAULT_COLOR}}>
+                                            Help
+                                        </Text>
+                                        
+                                    </TouchableOpacity>
+                                    
+                                </View>
+                                <View style={{
                                     flexDirection: 'row',
                                     justifyContent: 'center',
-                                    marginVertical:30
-                            }}>
-                                <TouchableOpacity
-                                    style={{
-                                        paddingHorizontal: 20,
-                                        paddingVertical: 5,
-                                        borderColor: DEFAULT_COLOR,
-                                        borderWidth: 1,
-                                        borderRadius:5
-                                    }}
-                                    onPress={() => this.props.navigation.navigate('HelpScreen')}>
-                                    <Text style={{color:DEFAULT_COLOR}}>
-                                        Help
-                                    </Text>
-                                    
-                                </TouchableOpacity>
-                                
+                                    marginBottom:0
+                                }}>
+                                    <Text style={styles.label}>RESERVATION # 4593038</Text>
+                                </View>
                             </View>
-                            <View style={{
-                                flexDirection: 'row',
-                                justifyContent: 'center',
-                                marginBottom:10
-                            }}>
-                                <Text style={styles.label}>RESERVATION # 4593038</Text>
-                            </View>
+
                         </View>
                     </ScrollView>
                     <TabBar props={this.props}/>
@@ -253,10 +262,10 @@ const styles = StyleSheet.create({
     box: {
         justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'row',
+        flexDirection:'row',
         width: 50,
         height: 50,
-        backgroundColor: 'grey',
+        backgroundColor: '#d8d8d8',
     },
     checkboxContainer: {
         flexDirection: "row",

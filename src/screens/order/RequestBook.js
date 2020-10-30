@@ -25,39 +25,42 @@ class RequestBook extends React.Component {
     render() {
         return (
             <>
-
                 <View style={{ flex: 1 }}>
                     <View style={{
                         flexDirection: 'row',
                         paddingVertical: 12,
-
                     }}>
                         <TouchableOpacity
-                            style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                            style={{ marginTop: 30, marginLeft: 0, position: 'absolute', zIndex: 10 }}
                             onPress={() => this.props.navigation.navigate('ToolProfileScreen')}>
                             <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
                     </View>
                     <View style={{
                         flexDirection: 'row',
-                        marginTop: 40,
+                        marginTop: 60,
                         marginHorizontal: 10,
                         alignItems: 'center',
                     }}>
                     </View>
                     <ScrollView style={styles.container}>
-                        
                         <View style={styles.mainContainer}>
                             <View style={{
                                 flexDirection: 'row',
                                 justifyContent: 'space-between',
                                 alignItems:'center'
                             }}>
-                                <Text style={styles.text}>
-                                    Milwaukee M18 1/2“ {'\n'}{'\n'}
-                                    $13 / day
-                                </Text>
-                                <View style={{ height: 60, width: 100, }}>
+                                <View>
+                                    <Text style={styles.text}>
+                                        Milwaukee M18 {'\n'}1/2“ Compact Drills{'\n'}
+                                        
+                                    </Text>
+                                    <Text style={{marginTop:5, fontSize:12, color:"grey"}}>
+                                        $13 / day
+                                    </Text>
+                                </View>
+                                
+                                <View style={{ height: 80, width: 120, }}>
                                     <Image
                                         style={styles.imageStyle}
                                         source={require("./../../../assets/images/3.png")}
@@ -71,24 +74,38 @@ class RequestBook extends React.Component {
                                     justifyContent: 'space-between',
                                     alignItems: 'center'
                                 }}>
-                                <Text style={styles.textDescription}>
-                                    Start Date{'\n'}
-                                    Decmeber 6
-                                </Text>
-                                <Text style={styles.textDescription}>
-                                    End Date{'\n'}
-                                    Decmeber 9
-                                </Text>
-                                <Text style={styles.textDescription}>
-                                    Duration{'\n'}
-                                   3 Days
-                                </Text>
+                                    <View>
+                                        <Text style={styles.textDescription}>
+                                        Start Date
+                                        </Text>
+                                        <Text style={{marginTop:10, fontSize:12, color:"grey"}} > 
+                                        Decmeber 6
+                                        </Text>
+                                    </View>
+                                    <View>
+                                        <Text style={styles.textDescription}>
+                                        End Date
+                                        </Text>
+                                        <Text style={{marginTop:10, fontSize:12, color:"grey"}} > 
+                                        Decmeber 6
+                                        </Text>
+                                    </View>
+                                    <View>
+                                        <Text style={styles.textDescription}>
+                                        Duration
+                                        </Text>
+                                        <Text style={{marginTop:10, fontSize:12, color:"grey"}} > 
+                                        3 Days
+                                        </Text>
+                                    </View>
+                                
+                                
                             </View>
 
                            
                             <View style={styles.divider} />
                             <View>
-                                <Text style={styles.text}>Metting Availability</Text>
+                                <Text style={styles.text}>Exchange Time</Text>
                             </View>
                             <Text style={styles.textDescription}>
                                 9am                    9pm
@@ -131,10 +148,10 @@ class RequestBook extends React.Component {
                                     justifyContent: 'space-between',
                                     alignItems: 'center'
                                 }}>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                     $13 * 3 days
                                 </Text>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                     $39
                                 </Text>
                             </View>
@@ -144,10 +161,10 @@ class RequestBook extends React.Component {
                                     justifyContent: 'space-between',
                                     alignItems: 'center'
                                 }}>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                    Service fee
                                 </Text>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                     $5.85
                                 </Text>
                             </View>
@@ -175,7 +192,8 @@ class RequestBook extends React.Component {
                         borderWidth: 1,
                         justifyContent: 'space-between',
                         flexDirection: 'row',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        justifyContent:'center'
                     }}
                     >
                         <TouchableOpacity
@@ -209,18 +227,18 @@ const styles = StyleSheet.create({
         height: 150
     },
     button: {
-        backgroundColor: 'red',
+        backgroundColor: '#ea565c',
         justifyContent: 'center',
         flexDirection: 'row',
         flexWrap: 'wrap',
         padding: 6,
         paddingHorizontal: 15,
-        width:'100%'
+        width:'80%'
     },
     divider: {
-        borderBottomColor: DEFAULT_COLOR,
+        borderBottomColor: '#f0f8ff',
         borderWidth: 0.5,
-        marginVertical:10
+        marginVertical:15
     },
     buttonText: {
         color: 'white'

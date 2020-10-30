@@ -32,13 +32,13 @@ class RequestStepTwo extends React.Component {
 
                     }}>
                         <TouchableOpacity
-                            style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                            style={{ marginTop: 30, marginLeft: 0, position: 'absolute', zIndex: 10 }}
                             onPress={() => this.props.navigation.navigate('ToolProfileScreen')}>
                             <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
                     </View>
                     <View style={{
-                        marginTop: 30,
+                        marginTop: 60,
                         marginHorizontal: 10,
                     }}>
                         <Text style={styles.text}>Step 2 of 2</Text>
@@ -57,11 +57,11 @@ class RequestStepTwo extends React.Component {
                                         Milwaukee M18 1/2“ {'\n'}
                                     Compact Drill
                                 </Text>
-                                    <Text style={styles.text}>
+                                    <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                         Dec 6~9, 3 days
                                 </Text>
                                 </View>
-                                <View style={{ height: 60, width: 100, }}>
+                                <View style={{ height: 80, width: 120, }}>
                                     <Image
                                         style={styles.imageStyle}
                                         source={require("./../../../assets/images/3.png")}
@@ -76,17 +76,21 @@ class RequestStepTwo extends React.Component {
                                     alignItems: 'center',
                                     justifyContent: 'space-between',
                                 }}>
+                                    <View style={{flexDirection:'row'}}>
                                     <View style={{
                                         width: 50,
                                         height: 30,
                                         borderColor: DEFAULT_COLOR,
                                         borderWidth: 0.8,
                                         justifyContent: 'center',
-                                        alignItems: 'center'
+                                        alignItems: 'center',
+                                        marginRight:10
                                     }}>
                                         <Feather name="plus" size={20} color={DEFAULT_COLOR} />
                                     </View>
                                     <Text style={styles.text}>Add payment</Text>
+                                    </View>
+
                                     <View style={{
                                         justifyContent: 'center', alignItems: 'center'
                                     }}>
@@ -104,10 +108,10 @@ class RequestStepTwo extends React.Component {
                                     justifyContent: 'space-between',
                                     alignItems: 'center'
                                 }}>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                     $13 * 3 days
                                 </Text>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                     $39
                                 </Text>
                             </View>
@@ -117,10 +121,10 @@ class RequestStepTwo extends React.Component {
                                     justifyContent: 'space-between',
                                     alignItems: 'center'
                                 }}>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                     Service fee
                                 </Text>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                     $5.85
                                 </Text>
                             </View>
@@ -163,7 +167,8 @@ class RequestStepTwo extends React.Component {
                         borderWidth: 1,
                         justifyContent: 'space-between',
                         flexDirection: 'row',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        justifyContent:'center'
                     }}
                     >
                         <TouchableOpacity
@@ -193,18 +198,18 @@ const styles = StyleSheet.create({
         height: 150
     },
     button: {
-        backgroundColor: 'red',
+        backgroundColor: '#ea565c',
         justifyContent: 'center',
         flexDirection: 'row',
         flexWrap: 'wrap',
         padding: 6,
         paddingHorizontal: 15,
-        width: '100%'
+        width:'80%'
     },
     divider: {
         borderBottomColor: DEFAULT_COLOR,
         borderWidth: 0.5,
-        marginVertical: 10
+        marginVertical: 13
     },
     buttonText: {
         color: 'white'

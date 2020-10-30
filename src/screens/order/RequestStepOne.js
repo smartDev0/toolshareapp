@@ -32,17 +32,17 @@ class RequestStepOne extends React.Component {
                         paddingVertical: 12,
                     }}>
                         <TouchableOpacity
-                            style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                            style={{ marginTop: 30, marginLeft: 0, position: 'absolute', zIndex: 10 }}
                             onPress={() => this.props.navigation.navigate('RequestBookScreen')}>
                             <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
                     </View>
                     <View style={{
-                        marginTop: 30,
+                        marginTop: 60,
                         marginHorizontal: 10,
                     }}>
                         <Text style={styles.text}>Step 1 of 2</Text>
-                        <Text style={styles.title}>Your listing is now live!</Text>
+                        <Text style={styles.title}>Book your request</Text>
                         <View style={styles.divider} />
                     </View>
                     <ScrollView style={styles.container}>
@@ -54,7 +54,7 @@ class RequestStepOne extends React.Component {
                                 alignItems: 'center'
                             }}>
                                 <View>
-                                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                    <View style={{ flexDirection: 'row', alignItems: 'center',marginBottom:10 }}>
                                         <View style={styles.box}>
                                             <Text >
                                                 Dec 6
@@ -77,7 +77,7 @@ class RequestStepOne extends React.Component {
                                         </Text>
                                     </View>
                                 </View>
-                                <View style={{ height: 60, width: 100, }}>
+                                <View style={{ height: 80, width: 120, }}>
                                     <Image
                                         style={styles.imageStyle}
                                         source={require("./../../../assets/images/3.png")}
@@ -127,16 +127,18 @@ class RequestStepOne extends React.Component {
                             </View>
                         </View>
                     </ScrollView>
-                    <View style={{
+                    <View 
+                    style={{
                         paddingVertical: 10,
                         paddingHorizontal: 10,
                         borderTopColor: 'grey',
                         borderWidth: 1,
-                        justifyContent: 'space-between',
+                        justifyContent: 'space-around',
                         flexDirection: 'row',
-                        alignItems: 'center'
+                        alignItems: 'center',
                     }}
                     >
+                        
                         <View>
                             <Text>
                                 $44.35 for 3 days
@@ -152,6 +154,8 @@ class RequestStepOne extends React.Component {
                                NEXT
                             </Text>
                         </TouchableOpacity>
+                        
+
                     </View>
                 </View>
 
@@ -182,6 +186,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         padding: 6,
         paddingHorizontal: 15,
+        borderRadius:2
     },
     divider: {
         borderBottomColor: DEFAULT_COLOR,
@@ -201,7 +206,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         width: 50,
         height: 50,
-        backgroundColor: 'grey',
+        backgroundColor: '#d8d8d8',
     },
     checkboxContainer: {
         flexDirection: "row",

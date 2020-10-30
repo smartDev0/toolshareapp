@@ -35,13 +35,13 @@ class Payment extends React.Component {
 
                     }}>
                         <TouchableOpacity
-                            style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                            style={{ marginTop: 30, marginLeft: 0, position: 'absolute', zIndex: 10 }}
                             onPress={() => this.props.navigation.navigate('RequestStepTwoScreen')}>
                             <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
                     </View>
                     <View style={{
-                        marginTop: 30,
+                        marginTop: 60,
                         marginHorizontal: 10,
                         marginBottom:10
                     }}>

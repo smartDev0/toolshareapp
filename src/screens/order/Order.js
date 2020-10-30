@@ -32,13 +32,13 @@ class Order extends React.Component {
 
                     }}>
                         <TouchableOpacity
-                            style={{ marginTop: 15, marginLeft: 5, position: 'absolute', zIndex: 10 }}
+                            style={{ marginTop: 30, marginLeft: 0, position: 'absolute', zIndex: 10 }}
                             onPress={() => this.props.navigation.navigate('PaymentScreen')}>
                             <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
                     </View>
                     <View style={{
-                        marginTop: 30,
+                        marginTop: 60,
                         marginHorizontal: 10,
                     }}>
                         <Text style={styles.title}>Confirm Order</Text>
@@ -56,11 +56,11 @@ class Order extends React.Component {
                                         Milwaukee M18 1/2“ {'\n'}
                                     Compact Drill
                                 </Text>
-                                    <Text style={styles.text}>
+                                    <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                         Dec 6~9, 3 days
                                 </Text>
                                 </View>
-                                <View style={{ height: 60, width: 100, }}>
+                                <View style={{ height: 80, width: 120, }}>
                                     <Image
                                         style={styles.imageStyle}
                                         source={require("./../../../assets/images/3.png")}
@@ -99,10 +99,10 @@ class Order extends React.Component {
                                     justifyContent: 'space-between',
                                     alignItems: 'center'
                                 }}>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                     $13 * 3 days
                                 </Text>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                     $39
                                 </Text>
                             </View>
@@ -112,10 +112,10 @@ class Order extends React.Component {
                                     justifyContent: 'space-between',
                                     alignItems: 'center'
                                 }}>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                     Service fee
                                 </Text>
-                                <Text style={styles.textDescription}>
+                                <Text style={{marginVertical:5, fontSize:12, color:"grey"}}>
                                     $5.85
                                 </Text>
                             </View>
@@ -156,7 +156,7 @@ class Order extends React.Component {
                         paddingHorizontal: 10,
                         borderTopColor: 'grey',
                         borderWidth: 1,
-                        justifyContent: 'space-between',
+                        justifyContent: 'center',
                         flexDirection: 'row',
                         alignItems: 'center'
                     }}
@@ -188,13 +188,13 @@ const styles = StyleSheet.create({
         height: 150
     },
     button: {
-        backgroundColor: 'red',
+        backgroundColor: '#ea565c',
         justifyContent: 'center',
         flexDirection: 'row',
         flexWrap: 'wrap',
         padding: 6,
         paddingHorizontal: 15,
-        width: '100%'
+        width:'80%'
     },
     divider: {
         borderBottomColor: DEFAULT_COLOR,
