@@ -37,6 +37,7 @@ import UploadEquipment from './screens/equipment/UploadEquipment';
 import Inbox from './screens/inbox/Inbox';
 import Message from './screens/inbox/Message';
 import Service from './screens/service/Service';
+import RentalTerm from './screens/order/RentalTerm';
 
 const d = Dimensions.get("window");
 const isX = Platform.OS === "ios" && (d.height > 800 || d.width > 800) ? true : false;
@@ -236,6 +237,12 @@ const NavigatorRoutes = createStackNavigator(
                 headerShown: false,
             },
         },
+        RentalTermScreen:{
+            screen: RentalTerm,
+            navigationOptions: {
+                headerShown: false,
+            },
+        }
     }
     
 );
