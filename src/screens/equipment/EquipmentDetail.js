@@ -6,8 +6,8 @@ import {
     Text,
     ScrollView,
     TouchableOpacity,
-    CheckBox,
 } from 'react-native';
+import { CheckBox } from 'react-native-elements';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { DEFAULT_COLOR } from './../../styles/common';
@@ -150,6 +150,7 @@ class EquipmentDetail extends React.Component {
                                 blurOnSubmit={false}
                                 numberOfLines={10}
                                 multiline={true}
+                                placeholder="Limit items"
                             />
                             <Text style={styles.text}>Condition</Text>
                             <RNPickerSelect
@@ -183,27 +184,36 @@ class EquipmentDetail extends React.Component {
                             />
                             <View style={styles.checkboxContainer}>
                                 <CheckBox
-                                    style={styles.checkbox}
-                                    value={this.state.checked}
-                                    onValueChange={() => this.setState({
+                                    size={15}
+                                    checked={this.state.checked}
+                                    onPress={() => this.setState({
                                         checked: !this.state.checked
                                     })}
-                                    tintColors={{ true: DEFAULT_COLOR, false: 'black' }}
                                 />
                                 <Text style={styles.label}>My tool/ equipment is in like new working order, with no comprimising damage or modifired in any way.</Text>
                             </View>
                             <View style={styles.checkboxContainer}>
                                 <CheckBox
-                                    style={styles.checkbox}
-                                    value={this.state.mailCheck}
-                                    onValueChange={() => this.setState({
-                                        checked: !this.state.mailCheck
+                                    size={15}
+                                    checked={this.state.mailCheck}
+                                    onPress={() => this.setState({
+                                        mailCheck: !this.state.mailCheck
                                     })}
-                                    tintColors={{ true: DEFAULT_COLOR, false: 'black' }}
                                 />
                                 <Text style={styles.label}>I understant that itis my responsibility to inform my personal insuer about my participation ion ToolShare.</Text>
                             </View>
-
+                            <Text style={styles.text}>Equipment Rule</Text>
+                            <Text style={styles.textDescription}>
+                                Indicate all use that would use that damage to equipment
+                            </Text> 
+                            <TextInput
+                                style={styles.textareTnput}
+                                placeholderTextColor="grey"
+                                returnKeyType="next"
+                                blurOnSubmit={false}
+                                numberOfLines={10}
+                                multiline={true}
+                            />
                         </View>
                     </View>
                 </ScrollView>
@@ -291,7 +301,7 @@ const styles = StyleSheet.create({
     checkboxContainer: {
         flexDirection: "row",
         marginBottom: 0,
-
+        alignItems:'center'
     },
     title: {
         fontSize: 20

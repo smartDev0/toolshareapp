@@ -7,9 +7,9 @@ import {
     ScrollView,
     TouchableOpacity,
     Image,
-    CheckBox,
     Platform
 } from 'react-native';
+import { CheckBox } from 'react-native-elements';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { DEFAULT_COLOR } from './../../styles/common';
@@ -22,8 +22,17 @@ class Payment extends React.Component {
         super(props);
         this.state = {
             flag: false,
-            check:false,
+            check: false,
+            error: false
         }
+    }
+    onSubmit = () => {
+        if (this.state.check) {
+            this.props.navigation.navigate('OrderScreen')
+        } else {
+            this.setState({ error: true });
+        }
+
     }
     render() {
         return (
@@ -43,15 +52,32 @@ class Payment extends React.Component {
                     <View style={{
                         marginTop: 60,
                         marginHorizontal: 10,
-                        marginBottom:10
+                        marginBottom: 10
                     }}>
-                        <Text style={styles.title}>Review and pay</Text>
+                        {this.state.error &&
+                            <View style={{ backgroundColor: "#ea565c", padding: 10, marginBottom: 10, }}>
+                                <Text style={{ color: "white" }}>
+                                    Payment failed. Try again, or try another payment method. 
+                                        <Text 
+                                            onPress={()=>{this.props.navigation.navigate('HelpScreen')}}
+                                            style={{
+                                                color: "white", textDecorationLine: "underline",
+                                                textDecorationStyle: "solid",
+                                                textDecorationColor: "white",
+                                            }}>
+                                            Get Help
+                                        </Text>
+                                </Text>
+                            </View>
+                        }
+
+                        <Text style={styles.title}>Enter your card details</Text>
                     </View>
                     <ScrollView style={styles.container}>
                         <View style={styles.mainContainer}>
                             <Text style={styles.text}>CARD DETAILS</Text>
                             <View>
-                               
+
                                 <TextInput
                                     style={styles.cardInput}
                                     placeholder="0000 0000 0000 0000"
@@ -63,7 +89,7 @@ class Payment extends React.Component {
                                     source={require("./../../../assets/images/payment.png")}
                                 />
                             </View>
-                            <View style={{flexDirection:'row', flex:1}}>
+                            <View style={{ flexDirection: 'row', flex: 1 }}>
                                 <TextInput
                                     style={styles.dateInput}
                                     placeholder="MM/YY"
@@ -126,15 +152,15 @@ class Payment extends React.Component {
                             />
                             <View style={styles.checkboxContainer}>
                                 <CheckBox
-                                    style={styles.checkbox}
-                                    value={this.state.check}
-                                    onValueChange={() => this.setState({
-                                        check: !this.state.check
+                                    size={15}
+                                    checked={this.state.check}
+                                    onPress={() => this.setState({
+                                        check: !this.state.check, error:false
                                     })}
-                                    
+
                                 />
                                 <Text style={styles.label}>
-                                     Remember this card.
+                                    Remember this card.
                                 </Text>
                             </View>
                         </View>
@@ -143,13 +169,13 @@ class Payment extends React.Component {
                         paddingVertical: 10,
                         paddingHorizontal: 10,
                         flexDirection: 'row',
-                        justifyContent:'flex-end'
+                        justifyContent: 'flex-end'
                     }}
                     >
                         <TouchableOpacity
                             style={styles.nextButton}
                             activeOpacity={0.7}
-                            onPress={() => this.props.navigation.navigate('OrderScreen')}
+                            onPress={this.onSubmit}
                         >
                             <Feather name="chevron-right" size={26} color={'white'} />
                         </TouchableOpacity>
@@ -203,10 +229,10 @@ const styles = StyleSheet.create({
         backgroundColor: DEFAULT_COLOR,
         justifyContent: 'center',
         flexDirection: 'row',
-        alignItems:'center',
+        alignItems: 'center',
         width: 40,
         height: 40,
-        borderRadius:20
+        borderRadius: 20
     },
     divider: {
         borderBottomColor: DEFAULT_COLOR,
@@ -224,12 +250,12 @@ const styles = StyleSheet.create({
         height: 36,
         paddingVertical: 5,
         paddingHorizontal: 10,
-        paddingRight:100,
+        paddingRight: 100,
         borderWidth: 0.6,
         borderColor: 'grey',
         color: 'black',
         borderTopRightRadius: 5,
-        borderTopLeftRadius:5
+        borderTopLeftRadius: 5
     },
     zipInput: {
         height: 36,
@@ -239,7 +265,7 @@ const styles = StyleSheet.create({
         borderColor: 'grey',
         color: 'black',
         borderBottomLeftRadius: 5,
-        borderBottomRightRadius:5
+        borderBottomRightRadius: 5
     },
     textInput: {
         height: 36,
@@ -248,11 +274,11 @@ const styles = StyleSheet.create({
         borderWidth: 0.6,
         borderColor: 'grey',
         color: 'black',
-        borderRadius:5
+        borderRadius: 5
     },
     dateInput: {
         height: 36,
-        width:'50%',
+        width: '50%',
         paddingVertical: 5,
         paddingHorizontal: 10,
         borderWidth: 0.6,
@@ -274,7 +300,7 @@ const styles = StyleSheet.create({
     checkboxContainer: {
         flexDirection: "row",
         marginBottom: 0,
-
+        alignItems: "center"
     },
     title: {
         fontSize: 20,
@@ -337,7 +363,7 @@ const styles = StyleSheet.create({
     },
     imageStyle: {
         position: 'absolute',
-        right:10,
-        marginTop:10
+        right: 10,
+        marginTop: 10
     },
 });

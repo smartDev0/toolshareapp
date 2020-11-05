@@ -29,7 +29,7 @@ export default class Help extends React.Component {
                     <View style={styles.headerBackground}>
                         <TouchableOpacity
                             activeOpacity={0.7}
-                            style={{ marginTop: 10, marginLeft: 5 }}
+                            style={{ marginTop: 30, marginLeft: 0}}
                             onPress={() => this.props.navigation.navigate('ProfileScreen')}>
                             <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
