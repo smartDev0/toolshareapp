@@ -6,10 +6,10 @@ import {
     Text,
     ScrollView,
     TouchableOpacity,
-    Platform
+    Image
 } from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
 
@@ -76,7 +76,7 @@ class UploadEquipment extends React.Component {
                             </View>
 
                         </View>
-                        <View>
+                        {/* <View>
                             <TouchableOpacity
                                 style={{
                                     height: 100, width: '100%',
@@ -94,6 +94,56 @@ class UploadEquipment extends React.Component {
                                     <Text> Select Photos</Text>
                                 </View>
                             </TouchableOpacity>
+                        </View> */}
+                        <View style={{marginVertical:10}}>
+                            <View style={{marginVertical:6, flex:1, flexDirection:'row', justifyContent:'space-between'}}>
+                                <View style={{flex:0.48}}>
+                                    <Image
+                                        style={styles.toolImage}
+                                        source={require('./../../../assets/images/1.png')}
+                                    />
+                                </View>
+                                <View style={{flex:0.48}}>
+                                    <Image
+                                        style={styles.toolImage}
+                                        source={require('./../../../assets/images/1.png')}
+                                    />
+                                </View>
+                            </View>
+                            <View style={{marginVertical:6, flex:1, flexDirection:'row', justifyContent:'space-between'}}>
+                                <View style={{flex:0.48}}>
+                                    <Image
+                                        style={styles.toolImage}
+                                        source={require('./../../../assets/images/1.png')}
+                                    />
+                                </View>
+                                <View style={{flex:0.48}}>
+                                    <Image
+                                        style={styles.toolImage}
+                                        source={require('./../../../assets/images/1.png')}
+                                    />
+                                </View>
+                            </View>
+                            <View style={{marginVertical:6, flex:1, flexDirection:'row', justifyContent:'space-between'}}>
+                                <View style={{flex:0.48, display:'flex', alignItems:'center', justifyContent:'center'}}>
+                                    <TouchableOpacity
+                                       style={{flexDirection:'row', 
+                                       alignItems:'center', backgroundColor:'#ea565c', justifyContent:'center',
+                                       padding:8, }}>
+
+                                        <AntDesign name="camera" size={20} color={'white'} />
+                                        <Text style={{color:'white', fontWeight:'bold'}}> Upload Photos</Text>
+
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={{flex:0.48}}>
+                                    <Image
+                                        style={styles.toolImage}
+                                        source={require('./../../../assets/images/1.png')}
+                                    />
+                                </View>
+                            </View>
+                        
                         </View>
                         <View>
                             <Text style={styles.text}>What photos should I take before each exchage?</Text>
@@ -132,6 +182,10 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: 'white'
+    },
+    toolImage:{
+        width:'100%',
+        height:110
     },
     bottom: {
         flex: 1,

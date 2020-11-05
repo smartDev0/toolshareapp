@@ -36,7 +36,7 @@ class RentalTerm extends React.Component {
                     }}>
                         <TouchableOpacity
                             style={{ marginTop: 30, marginLeft: 0, position: 'absolute', zIndex: 10 }}
-                            onPress={() => this.props.navigation.navigate('ProfileScreen')}>
+                            onPress={() => this.props.navigation.navigate('SettingScreen')}>
                             <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
                     </View>

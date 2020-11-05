@@ -105,24 +105,6 @@ export default class ListingToolSilder extends React.Component {
                             </TouchableOpacity>
                             <View style={styles.divider}></View>
                         </View>
-                        <View style={styles.item}>
-                            <TouchableOpacity
-                                onPress={() => this.props.navigation.navigate('LoginScreen')}>
-                                <Text style={styles.text}>
-                                    Log out
-                            </Text>
-                            </TouchableOpacity>
-                            <View style={styles.divider}></View>
-                        </View>
-                        <View style={styles.item}>
-                            <TouchableOpacity
-                                onPress={() => this.props.navigation.navigate('RentalTermScreen')}>
-                                <Text style={styles.text}>
-                                    Rental Term
-                            </Text>
-                            </TouchableOpacity>
-                            <View style={styles.divider}></View>
-                        </View>
                     </View>
                 </ScrollView>
                 <TabBar props={this.props}/>

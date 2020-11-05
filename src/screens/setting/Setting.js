@@ -29,7 +29,7 @@ export default class Setting extends React.Component {
                     <View style={styles.headerBackground}>
                         <TouchableOpacity
                             activeOpacity={0.7}
-                            style={{ marginTop: 10, marginLeft: 5 }}
+                            style={{ marginTop: 30, marginLeft: 0 }}
                             onPress={() => this.props.navigation.navigate('ProfileScreen')}>
                             <Feather name="chevron-left" size={35} color={DEFAULT_COLOR} />
                         </TouchableOpacity>
@@ -70,7 +70,8 @@ export default class Setting extends React.Component {
                             <View style={styles.divider}></View>
                         </View>
                         <View style={styles.item}>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                            onPress={() => this.props.navigation.navigate('RentalTermScreen')}>
                                 <Text style={styles.text}>
                                     Terms of Service
                         </Text>
