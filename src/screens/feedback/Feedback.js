@@ -16,7 +16,7 @@ import {
     Modal
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Fontisto from 'react-native-vector-icons/Fontisto';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import { DEFAULT_COLOR } from './../../styles/common';
@@ -124,10 +124,10 @@ export default class Feedback extends React.Component {
                                     <FontAwesome name="smile-o" size={40} color={'#ffd700'} />
                                 }
                                 {this.state.value === 4 &&
-                                    <FontAwesome5 name="grin-beam" size={36} color={'#ffd700'} />
+                                    <Fontisto name="laughing" size={32} color={'#ffd700'} />
                                 }
                                 {this.state.value === 5 &&
-                                    <FontAwesome5 name="grin-stars" size={36} color={'#ffd700'} />
+                                    <Fontisto name="heart-eyes" size={32} color={'#ffd700'} />
                                 }
                                 <View
                                 style={{width:'100%', marginBottom:15, marginTop:-20}}>

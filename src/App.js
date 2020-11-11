@@ -17,6 +17,7 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Foundation from 'react-native-vector-icons/Foundation';
 import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 Icon.loadFont();
 Feather.loadFont();
 Ionicons.loadFont();
@@ -28,6 +29,7 @@ SimpleLineIcons.loadFont();
 Foundation.loadFont();
 Entypo.loadFont();
 EvilIcons.loadFont();
+FontAwesome.loadFont();
 console.disableYellowBox = true;
 export default class App extends Component {
   render() {
