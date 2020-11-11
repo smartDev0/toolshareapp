@@ -16,6 +16,8 @@ import {
     Modal
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
@@ -28,12 +30,12 @@ export default class Feedback extends React.Component {
         super(props);
         this.state= {
             feedback:false,
-            value:''
+            value:0
         }
     }
     componentDidMount() {
     }
-    ratingCompleted(rating) {
+    ratingCompleted = (rating) => {
         this.setState({value: rating})
         console.log("Rating is: " + rating)
       }
@@ -112,7 +114,21 @@ export default class Feedback extends React.Component {
                                 <Text style={styles.modalTitle}>
                                     How likely are you to recommend us?
                                 </Text>
-                                <MaterialCommunityIcons name="emoticon-angry-outline" size={36} color={'#ffd700'}/>
+                                {this.state.value === 1 &&
+                                    <MaterialCommunityIcons name="emoticon-angry-outline" size={42} color={'#ffd700'} />
+                                }
+                                {this.state.value === 2 &&
+                                    <FontAwesome name="meh-o" size={40} color={'#ffd700'} />
+                                }
+                                {this.state.value === 3 &&
+                                    <FontAwesome name="smile-o" size={40} color={'#ffd700'} />
+                                }
+                                {this.state.value === 4 &&
+                                    <FontAwesome5 name="grin-beam" size={36} color={'#ffd700'} />
+                                }
+                                {this.state.value === 5 &&
+                                    <FontAwesome5 name="grin-stars" size={36} color={'#ffd700'} />
+                                }
                                 <View
                                 style={{width:'100%', marginBottom:15, marginTop:-20}}>
                                     <AirbnbRating 
