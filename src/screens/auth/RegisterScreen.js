@@ -11,9 +11,9 @@ import {
     KeyboardAvoidingView,
     Platform,
     Button,
-    CheckBox,
     ImageBackground,
 } from 'react-native';
+import { CheckBox } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Feather';
 import RNPickerSelect from 'react-native-picker-select';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -260,24 +260,22 @@ class RegisterScreen extends React.Component {
                             <View style={{height:40}}></View>
                             <View style={styles.checkboxContainer}>
                                 <CheckBox
-                                    style={styles.checkbox}
-                                    value={this.state.checked}
-                                    onValueChange={() => this.setState({
+                                    size={15}
+                                    checked={this.state.checked}
+                                    onPress={() => this.setState({
                                         checked: !this.state.checked
                                     })}
-                                    tintColors={{ true: 'white', false: 'black' }}
                                 />
                                 <Text style={styles.label}>I agree to ToolShare's
                                 <Text style={styles.active_text}> Terms of Service</Text> and <Text style={styles.active_text}>Privacy Policy.</Text>  </Text>
                             </View>
                             <View style={styles.checkboxContainer}>
                                 <CheckBox
-                                    style={styles.checkbox}
-                                    value={this.state.mailCheck}
-                                    onValueChange={() => this.setState({
+                                    size={15}
+                                    checked={this.state.mailCheck}
+                                    onPress={() => this.setState({
                                         mailCheck: !this.state.mailCheck
                                     })}
-                                    tintColors={{ true: 'white', false: 'black' }}
                                 />
                                 <Text style={styles.label}>
                                     Email me with ToolShare news, deals, and awesome tools.  
@@ -417,6 +415,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         marginBottom: 0,
         // marginTop:20
+        alignItems:'center'
     },
     divide: {
         borderColor: "white",

@@ -11,9 +11,9 @@ import {
     KeyboardAvoidingView,
     Platform,
     Button,
-    CheckBox,
     ImageBackground
 } from 'react-native';
+import { CheckBox } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Feather';
 import { DEFAULT_COLOR } from '../../styles/common';
 class ForgotScreen extends React.Component {

@@ -19,21 +19,26 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import { DEFAULT_COLOR } from './../../styles/common';
 import TabBar from './../../components/TabBar';
-import { Rating, AirbnbRating } from 'react-native-ratings';
-
+import { AirbnbRating } from 'react-native-ratings';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 const windowWidth = Dimensions.get('window').width;
 
 export default class Feedback extends React.Component {
     constructor(props) {
         super(props);
         this.state= {
-            feedback:false
+            feedback:false,
+            value:''
         }
     }
     componentDidMount() {
     }
     ratingCompleted(rating) {
+        this.setState({value: rating})
         console.log("Rating is: " + rating)
+      }
+      onChangeRating = (e) => {
+          console.log(e);
       }
     render() {
 
@@ -107,13 +112,15 @@ export default class Feedback extends React.Component {
                                 <Text style={styles.modalTitle}>
                                     How likely are you to recommend us?
                                 </Text>
+                                <MaterialCommunityIcons name="emoticon-angry-outline" size={36} color={'#ffd700'}/>
                                 <View
-                                style={{width:'100%', marginBottom:15}}>
+                                style={{width:'100%', marginBottom:15, marginTop:-20}}>
                                     <AirbnbRating 
-                                    count={5}
-                                    reviews={[]}
-                                    defaultRating={0}
-                                    size={30}
+                                        count={5}
+                                        reviews={[]}
+                                        defaultRating={0}
+                                        size={30}
+                                        onFinishRating={this.ratingCompleted}
                                     />
                                 </View>
                                 <Text style={styles.modalText}>

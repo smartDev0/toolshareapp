@@ -11,9 +11,9 @@ import {
     KeyboardAvoidingView,
     Platform,
     Button,
-    CheckBox,
     ImageBackground
 } from 'react-native';
+import { CheckBox } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Feather';
 import { DEFAULT_COLOR } from '../../styles/common';
 class LoginScreen extends React.Component{
@@ -63,12 +63,11 @@ class LoginScreen extends React.Component{
                             />
                             <View style={styles.checkboxContainer}>
                                 <CheckBox
-                                    style={styles.checkbox}
-                                    value={this.state.checked}
-                                    onValueChange={() => this.setState({
-                                        checked:!this.state.checked
+                                    size={15}
+                                    checked={this.state.checked}
+                                    onPress={() => this.setState({
+                                        checked: !this.state.checked
                                     })}
-                                    tintColors={{ true: 'white', false: 'black' }}
                                 />
                                 <Text style={styles.label}>Remember password</Text>
                             </View>
@@ -206,7 +205,7 @@ const styles = StyleSheet.create({
     checkboxContainer: {
         flexDirection: "row",
         marginBottom: 20,
-       
+        alignItems:'center'
     },
     divide: {
         borderColor: "white",
